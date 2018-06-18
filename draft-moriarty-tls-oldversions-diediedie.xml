@@ -18,7 +18,7 @@
 <?rfc rfcedstyle="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes"?>
-<rfc category="std" docName="draft-moriarty-tls-oldversions-diediedie-00"
+<rfc category="std" docName="draft-moriarty-tls-oldversions-diediedie-01"
      ipr="trust200902" updates="[[List TBD]]">
   <front>
     <title abbrev="Deprecating TLSv1.0 and TLSv1.1">Deprecating TLSv1.0 and
