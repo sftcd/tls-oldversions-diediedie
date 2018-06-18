@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="US-ASCII"?>
 <!-- this is version 5 of this xml2rfc template -->
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 <!ENTITY rfc2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
@@ -21,10 +21,10 @@
 <rfc category="std" docName="draft-moriarty-tls-oldversions-diediedie-00"
      ipr="trust200902" updates="[[List TBD]]">
   <front>
-    <title abbrev="Deprecating TLSv1.0 and TLSv1.1">Deprecating TLSv1.0 and TLSv1.1</title>
+    <title abbrev="Deprecating TLSv1.0 and TLSv1.1">Deprecating TLSv1.0 and
+    TLSv1.1</title>
 
-    <author fullname="Kathleen Moriarty" initials="K" 
-            surname="Moriarty">
+    <author fullname="Kathleen Moriarty" initials="K" surname="Moriarty">
       <organization>Dell EMC</organization>
 
       <address>
@@ -40,20 +40,27 @@
       </address>
     </author>
 
-<author fullname="Stephen Farrell" initials="S." surname="Farrell">
-<organization>Trinity College Dublin</organization>
-<address>
-<postal>
-<street></street>
-<city>Dublin</city>
-<region></region>
-<code>2</code>
-<country>Ireland</country>
-</postal>
-<phone>+353-1-896-2354</phone>
-<email>stephen.farrell@cs.tcd.ie</email>
-</address>
-</author>
+    <author fullname="Stephen Farrell" initials="S." surname="Farrell">
+      <organization>Trinity College Dublin</organization>
+
+      <address>
+        <postal>
+          <street/>
+
+          <city>Dublin</city>
+
+          <region/>
+
+          <code>2</code>
+
+          <country>Ireland</country>
+        </postal>
+
+        <phone>+353-1-896-2354</phone>
+
+        <email>stephen.farrell@cs.tcd.ie</email>
+      </address>
+    </author>
 
     <date year="2018"/>
 
@@ -73,56 +80,52 @@
       <t>This document [if approved] formally deprecates Transport Layer
       Security (TLS) versions 1.0 <xref target="RFC2246"/> and 1.1 <xref
       target="RFC4346"/> and moves these documents to the historic state.
-	  These versions lack support for current and recommended cipher suites,
-	  and various government and industry profiiles of applications using
-	  TLS now mandate avoiding these old TLS versions.
-	  TLSv1.2 has been the recommended version for
-      IETF protocols since 2008, providing sufficient time to
-      transition away from older versions. Products having to
-      support older versions increase the attack surface unnecessarily
-      and increase opportunities for misconfigurations. Supporting these
-      older versions also requires additional effort for library and product
-      maintenance.</t>
+      These versions lack support for current and recommended cipher suites,
+      and various government and industry profiiles of applications using TLS
+      now mandate avoiding these old TLS versions. TLSv1.2 has been the
+      recommended version for IETF protocols since 2008, providing sufficient
+      time to transition away from older versions. Products having to support
+      older versions increase the attack surface unnecessarily and increase
+      opportunities for misconfigurations. Supporting these older versions
+      also requires additional effort for library and product maintenance.</t>
 
-      <t>This document updates the backward compatibility sections of TLS
-	  RFCs [[list TBD]] to prohibit fallback to TLSv1.0 and TLSv1.1. This document also
-	  updates RFC 7525.</t> 
+      <t>This document updates the backward compatibility sections of TLS RFCs
+      [[list TBD]] to prohibit fallback to TLSv1.0 and TLSv1.1. This document
+      also updates RFC 7525.</t>
     </abstract>
   </front>
 
   <middle>
     <section title="Introduction">
-
-		<t>[[Text in double-square brackets, like this, is commentary intended
-				to be fixed as the draft evolves. You're already seen that
-				we need to figure out the list of RFCs that this'd update in
-				the abstract.]]</t>
+      <t>[[Text in double-square brackets, like this, is commentary intended
+      to be fixed as the draft evolves. You're already seen that we need to
+      figure out the list of RFCs that this'd update in the abstract.]]</t>
 
       <t>Transport Layer Security (TLS) versions 1.0 <xref target="RFC2246"/>
-			  and 1.1 <xref target="RFC4346"/> were superceded by
-			  TLSv1.2 <xref target="RFC5246"/> in 2008, which has now itself
-			 been superceded by TLSv1.3 <xref target="I-D.ietf-tls-tls13"/>. 
-			 It is therefore timely to further deprecate these old versions.
-			 The expection is that TLSv1.2 will continue to be used for many
-			 years alongside TLSv1.3.</t>
-			  
-			  <t>TLSv1.1 and TLSv1.0 are also actively being deprecated 
-      in accordance with guidance from government agencies (e.g. <xref
-      target="NIST800-52r2">NIST SP 80052r2</xref>) and industry consortia such as the
-	  Payment Card Industry Association (PCI) <xref target="PCI-TLS1"/>. </t>
+      and 1.1 <xref target="RFC4346"/> were superceded by TLSv1.2 <xref
+      target="RFC5246"/> in 2008, which has now itself been superceded by
+      TLSv1.3 <xref target="I-D.ietf-tls-tls13"/>. It is therefore timely to
+      further deprecate these old versions. The expection is that TLSv1.2 will
+      continue to be used for many years alongside TLSv1.3.</t>
 
-	<t>The primary
-      technical reasons for deprecating these versions include:</t>
+      <t>TLSv1.1 and TLSv1.0 are also actively being deprecated in accordance
+      with guidance from government agencies (e.g. <xref
+      target="NIST800-52r2">NIST SP 80052r2</xref>) and industry consortia
+      such as the Payment Card Industry Association (PCI) <xref
+      target="PCI-TLS1"/>.</t>
+
+      <t>The primary technical reasons for deprecating these versions
+      include:</t>
 
       <t><list style="symbols">
-	  	<t>They require implementation of older cipher suites that are no longer
-			desirable for cryptographic reasons, e.g. TLSv1.0 makes 
-			TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA mandatory to implement</t>
+          <t>They require implementation of older cipher suites that are no
+          longer desirable for cryptographic reasons, e.g. TLSv1.0 makes
+          TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA mandatory to implement</t>
 
           <t>Lack of support for current recommended cipher suites, especially
-				  using AEAD ciphers which are not supported prior to TLS 1.2 </t>
-		  
-		  <!--  Not sure what this is for?
+          using AEAD ciphers which are not supported prior to TLS 1.2</t>
+
+          <!--  Not sure what this is for?
 			   Note:
           The registry must remain in support of TLSv1.2, but is updated
           through <xref target="I-D.ietf-tls-iana-registry-updates"/></t>
@@ -131,19 +134,20 @@
           <t>Support for four protocol versions increases the likelihood of
           misconfiguration</t>
 
-          <t>At least one widely-used library has plans to drop TLSv1.1 and TLSv1.0 support in upcoming
-          releases; products using such libraries would need to use older versions of the libraries
-          to support TLSv1.0 and TLSv1.1, which is clearly undesirable</t>
-
+          <t>At least one widely-used library has plans to drop TLSv1.1 and
+          TLSv1.0 support in upcoming releases; products using such libraries
+          would need to use older versions of the libraries to support TLSv1.0
+          and TLSv1.1, which is clearly undesirable</t>
         </list></t>
 
       <t>Deprecation of these versions is intended to assist developers as
-      additional justification to no longer support older TLS versions and to migrate to a
-      minimum of TLSv1.2. Deprecation also assists product teams with phasing
-      out support for the older versions to reduce the attack surface 
-      and the scope of maintenance for protocols in their offerings.</t>
+      additional justification to no longer support older TLS versions and to
+      migrate to a minimum of TLSv1.2. Deprecation also assists product teams
+      with phasing out support for the older versions to reduce the attack
+      surface and the scope of maintenance for protocols in their
+      offerings.</t>
 
-		<!-- duplication - already said in the bullet list above
+      <!-- duplication - already said in the bullet list above
       <t>Some TLS libraries are considering dropping support for TLSv1.0 and
       TLSv1.1 in upcoming releases. If products do not follow suit because the
       protocol has not been deprecated, multiple libraries may be needed for a
@@ -154,12 +158,22 @@
 
       <t>[[This draft is being written now so that the TLS WG chairs can just
       hit the "publication requested" button as soon as there is WG consensus
-      to deprecate these ancient versions of TLS. The authors however
-      think that deprecation now is timely.]]</t>
+      to deprecate these ancient versions of TLS. The authors however think
+      that deprecation now is timely.]]</t>
+
+      <!-- adding the boilerplate below for 2119 and 8174
+          -->
+
+      <section title="Terminology">
+        <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+        "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+        "OPTIONAL" in this document are to be interpreted as described in BCP
+        14 [RFC2119] [RFC8174] when, and only when, they appear in all
+        capitals, as shown here.</t>
+      </section>
     </section>
 
     <section title="Support for Deprecation">
-
       <t>Industry is actively following guidance provided by NIST and the PCI
       Council deprecating TLSv1.0 and TLSv1.1 by June 30, 2018. TLSv1.2 should
       remain a minimum baseline for TLS support at this time.</t>
@@ -260,10 +274,9 @@
     </section>
 
     <section title="Do Not Use TLSv1.0">
-			<t>TLSv1.0 MUST NOT be used.
-					<!-- I didn't get the reason for this here: <xref target="RFC8174"/>.  -->
-					Negotiation of
-      TLSv1.0 from any version of TLS MUST NOT be permitted.</t>
+      <t>TLSv1.0 MUST NOT be used. <!-- I didn't get the reason for this here: <xref target="RFC8174"/>.  -->
+      Negotiation of TLSv1.0 from any version of TLS MUST NOT be
+      permitted.</t>
 
       <t>Any version of TLS is more secure then TLSv1.0 and can be configured
       to prevent interception, though the highest version available is
@@ -285,7 +298,7 @@
       as the record layer version number for ClientHello, but they MUST NOT
       negotiate TLSv1.0.</t>
 
-	  <!-- what's this for? <t>Text derived from <xref target="RFC7568"/></t> -->
+      <!-- what's this for? <t>Text derived from <xref target="RFC7568"/></t> -->
     </section>
 
     <section title="Do Not Use TLSv1.1">
@@ -316,34 +329,26 @@
     </section>
 
     <section title="Updates to RFC7525">
-
-		<t>[[Since RFC7525 is BCP195, there'll probably be some process-fun
-				to do an update of that. Formally, it may be that this 
-				document becomes a new part of BCP195 I guess, but we can
-				figure that out with chairs and ADs.]]</t>
+      <t>[[Since RFC7525 is BCP195, there'll probably be some process-fun to
+      do an update of that. Formally, it may be that this document becomes a
+      new part of BCP195 I guess, but we can figure that out with chairs and
+      ADs.]]</t>
 
       <t>This documents updates <xref target="RFC7525"/> Section 3.1.1
       changing SHOULD NOT to MUST NOT as follows:</t>
 
       <t><list style="symbols">
           <t>Implementations MUST NOT negotiate TLS version 1.0 <xref
-          target="RFC2246"/>.
-              <vspace blankLines='1'/>
-
-              Rationale: TLS 1.0 (published in 1999) does not support many
-              modern, strong cipher suites. In addition, TLS 1.0 lacks a per-
-              record Initialization Vector (IV) for CBC-based cipher suites
-              and does not warn against common padding errors.
-            </t>
+          target="RFC2246"/>. <vspace blankLines="1"/> Rationale: TLS 1.0
+          (published in 1999) does not support many modern, strong cipher
+          suites. In addition, TLS 1.0 lacks a per- record Initialization
+          Vector (IV) for CBC-based cipher suites and does not warn against
+          common padding errors.</t>
 
           <t>Implementations MUST NOT negotiate TLS version 1.1 <xref
-          target="RFC4346"/>.
-              <vspace blankLines='1'/>
-
-              Rationale: TLS 1.1 (published in 2006) is a security
-              improvement over TLS 1.0 but still does not support certain
-              stronger cipher suites.
-            </t>
+          target="RFC4346"/>. <vspace blankLines="1"/> Rationale: TLS 1.1
+          (published in 2006) is a security improvement over TLS 1.0 but still
+          does not support certain stronger cipher suites.</t>
         </list></t>
 
       <t>This documents updates <xref target="RFC7525"/> Section 3.1.2
@@ -351,20 +356,16 @@
 
       <t><list style="symbols">
           <t>Implementations MUST NOT negotiate DTLS version 1.0 <xref
-          target="RFC4347"/>.
-              <vspace blankLines='1'/>
-
-              Version 1.0 of DTLS correlates to version 1.1 of TLS (see
-              above).
-            </t>
+          target="RFC4347"/>. <vspace blankLines="1"/> Version 1.0 of DTLS
+          correlates to version 1.1 of TLS (see above).</t>
         </list></t>
     </section>
 
     <section title="Security Considerations">
       <t>This document deprecates two older protocol versions for security
-      reasons already described. The attack surface is reduced when
-      there are a smaller number of supported protocols and fallback options
-      are removed.</t>
+      reasons already described. The attack surface is reduced when there are
+      a smaller number of supported protocols and fallback options are
+      removed.</t>
     </section>
 
     <section title="Acknowledgements">
@@ -384,6 +385,8 @@
   <back>
     <references title="Normative References">
       <?rfc include='reference.RFC.8174'?>
+
+      <?rfc include='reference.RFC.2119'?>
 
       <?rfc include='reference.RFC.2246'?>
 
