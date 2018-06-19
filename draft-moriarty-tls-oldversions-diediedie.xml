@@ -351,6 +351,18 @@
       negotiate TLSv1.1.</t>
     </section>
 
+    <section title="Do Not Use SHA-1 in TLSv1.2">
+        <t>SHA-1 as a signature hash MUST NOT be used. That means that
+            clients MUST send signature_algorithms extension and that extension
+            MUST NOT include pairs that include SHA-1 hash. In particular,
+            values {2, 1}, {2, 2} and {2, 3} MUST NOT be present in the
+            extension.</t>
+        <t>Note: this does not affect cipher suites that use SHA-1 HMAC for
+            data integrity as the HMAC construction is still considered secure
+            and when they are used in TLSv1.2 SHA-256 is used for handshake
+            integrity.</t>
+    </section>
+
     <section title="Updates to RFC7525">
       <t>[[Since RFC7525 is BCP195, there'll probably be some process-fun to
       do an update of that. Formally, it may be that this document becomes a
