@@ -131,6 +131,10 @@
           through <xref target="I-D.ietf-tls-iana-registry-updates"/></t>
 			-->
 
+          <t>Integrity of the handshake depends on SHA-1 hash</t>
+
+          <t>Authentication of the peers depends on SHA-1 signatures</t>
+
           <t>Support for four protocol versions increases the likelihood of
           misconfiguration</t>
 
@@ -271,6 +275,25 @@
 
           <t>[[Numerous web sites...]]</t>
         </list></t>
+    </section>
+
+    <section title="SHA-1">
+        <t>The integrity of both TLSv1.0 and TLSv1.1 depends on a running SHA-1
+            hash of the exchanged messages. This makes it possible to perform a
+            downgrade attack on the handshake by an attacker able to perform
+            2^77 operations, well below the acceptable modern security margin.
+        </t>
+
+        <t>Similarly, the authentication of the handshake depends on
+            signatures made using SHA-1 hash or a not stronger concatenation
+            of MD-5 and SHA-1 hashes, allowing the attacker to
+            impersonate a server when it is able to break the severly weakened
+            SHA-1 hash.</t>
+
+        <t>Neither TLSv1.0 nor TLSv1.1 allow the peers to select a stronger
+            hash for signatures in the ServerKeyExchange or CertificateVerify
+            messages, making the only upgrade path the use of a newer protocol
+            version</t>
     </section>
 
     <section title="Do Not Use TLSv1.0">
@@ -487,6 +510,22 @@
           </author>
 
           <date year="2017"/>
+        </front>
+      </reference>
+
+      <reference anchor="Bhargavan2016">
+        <front>
+            <title>Transcript Collision Attacks: Breaking Authentication in
+                TLS, IKE, and SSH
+                https://www.mitls.org/downloads/transcript-collisions.pdf
+            </title>
+            <author initials="K.B." surname="Bhargavan" fullname="Karthikeyan Bhargavan">
+                <organization>INRIA</organization>
+            </author>
+            <author initials="G.L." surname="Leuren" fullname="Gaëtan Leuren">
+                <organization>INRIA</organization>
+            </author>
+            <date year="2016"/>
         </front>
       </reference>
 
