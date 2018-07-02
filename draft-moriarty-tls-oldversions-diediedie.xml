@@ -235,7 +235,13 @@
       2018, <xref target="StackExchange">Stackexchange</xref> quoted 4 percent
       of browsers using TLSv1.0.</t>
 
-      <t><xref target="Alexa">The Alexa Top 1 Million Analysis</xref> from
+    <t> The number of websites supporting TLS 1.2 is growing (+0.4%), and has
+     reached 92% according to sslpulse as of June 19, 2018.
+     <xref target="SSLpulse"> SSLpulse</xref>. Deprecating TLS 1.0 and
+     TLS 1.1 will not have a huge impact on TLS clients.
+     </t>
+
+      <t><xref target="Alexa">The Top 1 Million Analysis</xref> from
       February 2018 shows that for the sites surveyed, the vast majority
       support TLSv1.2 (98.9 percent), with a mere 0.8 percent using TLSv1.0
       and an even smaller percentage using TLSv1.1.</t>
@@ -249,6 +255,10 @@
           <t>[[Numerous web sites...]]</t>
 
           <t>CloudFare <xref target="CloudFlare"/></t>
+
+          <t>KeyCDN <xref target="KeyCDN"/></t>
+
+	  <t>Digicert <xref target="Digicert"/></t>
 
           <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
 
@@ -423,6 +433,19 @@
         </front>
       </reference>
 
+      <reference anchor="SSLpulse">
+        <front>
+          <title>SSLpulse
+          https://www.ssllabs.com/ssl-pulse/</title>
+
+          <author>
+            <organization>SSLpulse - will be deleted before
+            publication</organization>
+          </author>
+
+          <date year="2018"/>
+        </front>
+      </reference>
       <reference anchor="NIST800-52r2">
         <front>
           <title>NIST SP800-52r2
@@ -470,6 +493,32 @@
 
           <author>
             <organization>CloudFlare</organization>
+          </author>
+
+          <date year="2018"/>
+        </front>
+      </reference>
+
+      <reference anchor="Digicert">
+        <front>
+          <title>Deprecating TLS 1.0 and 1.1
+          https://www.digicert.com/blog/depreciating-tls-1-0-and-1-1/</title>
+
+          <author>
+            <organization>Digicert</organization>
+          </author>
+
+          <date year="2018"/>
+        </front>
+      </reference>
+
+      <reference anchor="KeyCDN">
+         <front>
+          <title>Deprecating TLS 1.0 and 1.1 Enhancing Security for Everyone
+          https://www.keycdn.com/blog/deprecating-tls-1-0-and-1-1/</title>
+
+          <author>
+            <organization>KeyCDN</organization>
           </author>
 
           <date year="2018"/>
