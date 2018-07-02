@@ -9,6 +9,7 @@
 <!ENTITY rfc2629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
 <!ENTITY rfc3410 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3410.xml">
 <!ENTITY rfc4181 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4181.xml">
+<!ENTITY rfc7457 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7457.xml">
 ]>
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
@@ -98,8 +99,11 @@
   <middle>
     <section title="Introduction">
       <t>[[Text in double-square brackets, like this, is commentary intended
-      to be fixed as the draft evolves. You're already seen that we need to
-      figure out the list of RFCs that this'd update in the abstract.]]</t>
+      to be fixed as the draft evolves. You've already seen that we need to
+      figure out the list of RFCs that this'd update in the abstract.
+	  There is a github repo for this at:</t>
+	  <t>https://github.com/sftcd/tls-oldversions-diediedie</t>
+	  <t>PRs (on the xml file) are welcome there.]]</t>
 
       <t>Transport Layer Security (TLS) versions 1.0 <xref target="RFC2246"/>
       and 1.1 <xref target="RFC4346"/> were superceded by TLSv1.2 <xref
@@ -123,13 +127,11 @@
           TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA mandatory to implement</t>
 
           <t>Lack of support for current recommended cipher suites, especially
-          using AEAD ciphers which are not supported prior to TLS 1.2</t>
-
-          <!--  Not sure what this is for?
-			   Note:
-          The registry must remain in support of TLSv1.2, but is updated
-          through <xref target="I-D.ietf-tls-iana-registry-updates"/></t>
-			-->
+          using AEAD ciphers which are not supported prior to TLS 1.2.
+		  Note: registry entries for no-longer-desirable ciphersuites remain in the 
+		  registries, but many TLS registries are being updated
+		  through <xref target="I-D.ietf-tls-iana-registry-updates"/> which
+  		  denotes such entries as "not recommended."</t>
 
           <t>Integrity of the handshake depends on SHA-1 hash</t>
 
@@ -184,18 +186,16 @@
 
       <t>Specific details on attacks against TLSv1.0 and TLSv1.1 as well as
       their mitigations are provided in <xref target="NIST800-52r2">NIST
-      SP800-52r2</xref> and referenced RFCs. Although the attacks have been
+			  SP800-52r2</xref>, RFC 7457 <xref target="RFC7457"/>  and other referenced RFCs. Although the attacks have been
       mitigated, if support is dropped for future library releases for these
       versions, it is unlikely attacks found going forward will be mitigated
       in older library releases.</t>
 
-      <t>They have provided the following rationale.</t>
+      <t>NIST for example have provided the following rationale,
+			  copied with permission from <xref target="NIST800-52r2">NIST SP800-52r2</xref>, 
+			  section 1.2 "History of TLS" (with references changed for RFC formating).
 
-      <section title="NIST 800-52r2">
-        <t>The following text is copied with permission from <xref
-        target="NIST800-52r2">NIST SP800-52r2</xref> section 1.2 History of
-        TLS.</t>
-
+	<list>
         <t>TLS 1.1, specified in <xref target="RFC4346"/>, was developed to
         address weaknesses discovered in TLS 1.0, primarily in the areas of
         initialization vector selection and padding error processing.
@@ -227,7 +227,9 @@
         static RSA or DH key exchanges, the CBC mode of operation, or SHA-1.
         The list of extensions that can be used with TLS 1.3 has been reduced
         considerably.</t>
-      </section>
+	</list>
+	</t>
+
     </section>
 
     <section title="Usage and Support">
@@ -258,15 +260,14 @@
 
           <t>[[Numerous web sites...]]</t>
 
-          <t>CloudFare <xref target="CloudFlare"/></t>
-
-          <t>KeyCDN <xref target="KeyCDN"/></t>
-
-	  <t>Digicert <xref target="Digicert"/></t>
-
           <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
-
+          <t>CloudFare <xref target="CloudFlare"/></t>
+	  	  <t>Digicert <xref target="Digicert"/></t>
           <t>GitHub <xref target="GIT"/></t>
+          <t>KeyCDN <xref target="KeyCDN"/></t>
+          <t>PayPal <xref target="paypal"/></t>
+		  <t>Stripe <xref target="stripe"/></t>
+
         </list></t>
 
       <t>Many web sites have taken the action of including the deprecation of
@@ -276,14 +277,13 @@
 
       <t><list style="symbols">
           <t>3GPP 5G Release 16</t>
-
-          <t>GitHub <xref target="GIT"/></t>
-
-          <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
-
-          <t>CloudFare <xref target="CloudFlare"/></t>
-
           <t>[[Numerous web sites...]]</t>
+          <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
+          <t>CloudFare <xref target="CloudFlare"/></t>
+          <t>GitHub <xref target="GIT"/></t>
+          <t>PayPal <xref target="paypal"/></t>
+		  <t>Stripe <xref target="stripe"/></t>
+
         </list></t>
     </section>
 
@@ -304,6 +304,8 @@
             hash for signatures in the ServerKeyExchange or CertificateVerify
             messages, making the only upgrade path the use of a newer protocol
             version</t>
+
+		<t>See <xref target="Bhargavan2016"/> for additional detail.</t>
     </section>
 
     <section title="Do Not Use TLSv1.0">
@@ -331,7 +333,7 @@
       as the record layer version number for ClientHello, but they MUST NOT
       negotiate TLSv1.0.</t>
 
-      <!-- what's this for? <t>Text derived from <xref target="RFC7568"/></t> -->
+	  <t>[[Text here is derived (or stolen:-) from <xref target="RFC7568"/>]]</t>
     </section>
 
     <section title="Do Not Use TLSv1.1">
@@ -362,6 +364,10 @@
     </section>
 
     <section title="Do Not Use SHA-1 in TLSv1.2">
+		<t>[[This section was suggested in PR#2 by Hubert Kario. We're not 
+				clear if the WG would like this draft to include this or not,
+				so will ask the TLS WG at the appropriate time.]]</t>
+
         <t>SHA-1 as a signature hash MUST NOT be used. That means that
             clients MUST send signature_algorithms extension and that extension
             MUST NOT include pairs that include SHA-1 hash. In particular,
@@ -414,8 +420,15 @@
     </section>
 
     <section title="Acknowledgements">
-      <t>Thank you to those that reviewed and improved this document,
-      including Yoav Nir, Russ Housley, and David Black.</t>
+      <t>Thank you to those that reviewed and improved this document, including:
+			  David Black,
+			  Russ Housley,
+			  Hubert Kario,
+			  Loganaden Velvindron,
+			  Yoav Nir, 
+			  and
+			  Yaron Sheffer.
+	  </t>
     </section>
 
     <section title="IANA Considerations">
@@ -441,6 +454,8 @@
     </references>
 
     <references title="Informative References">
+      <?rfc include='reference.RFC.7457'?>
+
       <reference anchor="Alexa">
         <front>
           <title>The Alexa Top 1 Million Analysis
@@ -508,15 +523,37 @@
         </front>
       </reference>
 
+      <reference anchor="stripe">
+        <front>
+				<title>"Upgrading to SHA-2 and TLS 1.2"
+						https://stripe.com/blog/upgrading-tls
+				</title>
+          <author>
+            <organization>Stripe</organization>
+          </author>
+          <date year="2018"/>
+        </front>
+      </reference>
+
+      <reference anchor="paypal">
+        <front>
+				<title>"TLS1.2 and HTTP/1.1 Upgrade"
+		  https://www.paypal-notice.com/en/TLS-1.2-and-HTTP1.1-Upgrade/
+  		</title>
+          <author>
+            <organization>Paypal</organization>
+          </author>
+          <date year="2018"/>
+        </front>
+      </reference>
+
       <reference anchor="GIT">
         <front>
           <title>GitHub Deprecates TLSv1.0 and TLSv1.1
           https://githubengineering.com/crypto-removal-notice/</title>
-
           <author>
             <organization>GitHub</organization>
           </author>
-
           <date year="2018"/>
         </front>
       </reference>
@@ -574,6 +611,8 @@
         </front>
       </reference>
 
+	  <!-- 2nd author name below - need to figure HOWTO get fullname correct with non-ASCII
+		   character - the "e" in "Gaetan" should be an with two dots above, as in PR#2 -->
       <reference anchor="Bhargavan2016">
         <front>
             <title>Transcript Collision Attacks: Breaking Authentication in
@@ -583,7 +622,7 @@
             <author initials="K.B." surname="Bhargavan" fullname="Karthikeyan Bhargavan">
                 <organization>INRIA</organization>
             </author>
-            <author initials="G.L." surname="Leuren" fullname="Gaëtan Leuren">
+            <author initials="G.L." surname="Leuren" fullname="Gaetan Leuren">
                 <organization>INRIA</organization>
             </author>
             <date year="2016"/>
@@ -602,8 +641,13 @@
     </references>
 
     <section title="Change Log ">
-      <t>Note to RFC Editor: if this document does not obsolete an existing
-      RFC, please remove this appendix before publication as an RFC.</t>
+	<t>[[RFC editor: please remove this before publication.]]</t>
+	<t>From -00 to -01:
+      <list style="symbols">
+					<t>PR's #2,3</t>
+					<t>a few more references</t>
+	  </list>
+	</t>
     </section>
   </back>
 </rfc>
