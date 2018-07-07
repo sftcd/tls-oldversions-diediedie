@@ -233,7 +233,10 @@
     </section>
 
     <section title="Usage and Support">
+
       <t>[[This section can be removed upon publication.]]</t>
+
+	  <section title="Web">
 
       <t>Usage statistics for TLSv1.0 and TLSv1.1 vary slightly, but are in
       general very low already and soon to decline further with the impending
@@ -285,6 +288,21 @@
 		  <t>Stripe <xref target="stripe"/></t>
 
         </list></t>
+
+		</section>
+
+		<section title="Mail">
+
+				<t>In one 2018 ZMap-based study <xref target="clusters"/> of
+						~200,000 mail server IP addresses in 10 countries, use
+						of TLSv1.0 for various TLS services (both web and mail)
+						on IP addresses that host some mail service was seen at
+						10.6%. Use of TLSv1.1 was negligible - at 0.01%, for 
+					   TLSv1.1,	SSLv3 was twice as common.  TLSv1.2 was used for 89.3% of
+						services and no TLSv1.3 was seen.</t>
+
+		</section>
+
     </section>
 
     <section title="SHA-1">
@@ -629,6 +647,16 @@
         </front>
       </reference>
 
+	  <reference anchor="clusters">
+			  <front>
+					  <title>"Clusters of re-used keys"
+					  https://eprint.iacr.org/2018/299</title>
+					  <author fullname="Stephen Farrell" initials="S." surname="Farrell" />
+					  <date year="2018" />
+	  			</front>
+	</reference>
+
+
       <?rfc include='reference.RFC.5246'?>
 
       <?rfc include='reference.RFC.7568'?>
@@ -646,6 +674,7 @@
       <list style="symbols">
 					<t>PR's #2,3</t>
 					<t>a few more references</t>
+					<t>added section on email</t>
 	  </list>
 	</t>
     </section>

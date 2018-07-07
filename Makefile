@@ -18,5 +18,5 @@ backuup:
 	cp draft-moriarty-tls-oldversions-diediedie.xml backups/draft-moriarty-tls-oldversions-diediedie-$(DATE).xml
 
 clean:
-	rm -f   draft-moriarty-tls-oldversions-diediedie-00.txt *~
+	rm -f   draft-moriarty-tls-oldversions-diediedie.txt *~
 
