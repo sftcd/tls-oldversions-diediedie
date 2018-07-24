@@ -102,7 +102,7 @@
       to be fixed as the draft evolves. You've seen that we need to
       figure out the list of RFCs that this'd update in the abstract.
 	  There is a repo for this at: https://github.com/sftcd/tls-oldversions-diediedie
-	  PRs (on the xml file) are welcome there.]]</t>
+	  - PRs (on the xml file) are welcome there.]]</t>
 
       <t>Transport Layer Security (TLS) versions 1.0 <xref target="RFC2246"/>
       and 1.1 <xref target="RFC4346"/> were superceded by TLSv1.2 <xref
@@ -229,6 +229,9 @@
 	</list>
 	</t>
 
+	<t>The Canadian government treasury board have mandated that these
+			old versions of TLS not be used. <xref target="Canada"/></t>
+
     </section>
 
     <section title="Usage and Support">
@@ -303,13 +306,17 @@
 ----------+----------+------+-------+-------+-------+-------+
 Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
 ----------+----------+------+-------+-------+-------+-------+
-Firefox   | 20180709 |    - |   1.0 |     - |  94.0 |   5.0 |
-https://www.ietf.org/mail-archive/web/tls/current/msg26575.html
-----------+----------+------+-------+-------+-------+-------+
 Alexa     | 201802   |    - |   2.0 |  <0.1 |  97.9 |     - |
 https://scotthelme.co.uk/alexa-top-1-million-analysis-february-2018/
 ----------+----------+------+-------+-------+-------+-------+
-OTHER     | 20180724 |    - |     - |     - |     - |     - |
+Cloudflare| 20180518 |  0.0 |   9.3 |   0.2 |  84.9 |   5.5 |
+https://blog.cloudflare.com/you-get-tls-1-3-you-get-tls-1-3-everyone-gets-tls-1-3/
+----------+----------+------+-------+-------+-------+-------+
+Firefox   | 20180709 |    - |   1.0 |     - |  94.0 |   5.0 |
+https://www.ietf.org/mail-archive/web/tls/current/msg26575.html
+----------+----------+------+-------+-------+-------+-------+
+Chrome    | 20180711 |    - |   0.4 |  <0.1 |    -  |     - |
+https://www.ietf.org/mail-archive/web/tls/current/msg26620.html
   ]]></artwork>
 </figure>
 
@@ -354,6 +361,7 @@ OTHER     | 20180724 |    - |     - |     - |     - |     - |
 						Typically email deployments lag public web deployments in
 						terms of the rate of adoption of new TLS versions.</t>
 
+				<!--
 				<t>In one 2018 ZMap-based study <xref target="clusters"/> of
 						~200,000 mail server IP addresses in 10 countries, use
 						of TLSv1.0 for various TLS services (both web and mail)
@@ -361,6 +369,7 @@ OTHER     | 20180724 |    - |     - |     - |     - |     - |
 						10.6%. Use of TLSv1.1 was negligible - at 0.01%, for 
 					   TLSv1.1,	SSLv3 was twice as common.  TLSv1.2 was used for 89.3% of
 						services and no TLSv1.3 was seen.</t>
+				-->
 
 <figure anchor="mail-stats" title="Mail Statistics" >
 <artwork><![CDATA[
@@ -370,6 +379,12 @@ Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
 Clusters  | 20180316 | <0.1 |  10.6 |  <0.1 |  89.3 |     - |
 https://eprint.iacr.org/2018/299
 ----------+----------+------+-------+-------+-------+-------+
+TLSA      | 20180710 |    - |   1.4 |   0.1 |  98.5 |     - |
+https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
+----------+----------+------+-------+-------+-------+-------+
+UK-ESP    | 20180710 |    - |  19.9 |  <0.1 |    -  |     - |
+https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
+
   ]]></artwork>
 </figure>
 
@@ -387,11 +402,13 @@ https://eprint.iacr.org/2018/299
 ----------+----------+------+-------+-------+-------+-------+
 Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
 ----------+----------+------+-------+-------+-------+-------+
-Windows:
+Microsoft:
   Client  | 20180709 |    - | >10.0 |  ~0.3 |    -  |     - |
   Server  | 20180709 |    - |  ~1.5 |  ~0.0 |    -  |     - |
 https://www.ietf.org/mail-archive/web/tls/current/msg26577.html
 ----------+----------+------+-------+-------+-------+-------+
+Apple     | 20180709 |    - |   0.4 |     - |  99.6 |     - |
+https://www.ietf.org/mail-archive/web/tls/current/msg26634.html
   ]]></artwork>
 </figure>
 
@@ -554,12 +571,19 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
     </section>
 
     <section title="Acknowledgements">
-      <t>Thank you to those that reviewed and improved this document, including:
+      <t>Thank you to those that provided usage data, reviewed and improved this document, including:
+			  David Benjamin,
 			  David Black,
+			  Viktor Dukhovni,
+			  Alessandro Ghedini,
+			  Jeremy Harris,
 			  Russ Housley,
 			  Hubert Kario,
 			  Loganaden Velvindron,
+			  Eric Mill,
 			  Yoav Nir, 
+			  Andrei Popov,
+			  Eric Rescorla,
 			  and
 			  Yaron Sheffer.
 	  </t>
@@ -569,9 +593,6 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
       <t>[[This memo includes no request to IANA.]]</t>
     </section>
 
-    <section title="Contributors">
-      <t/>
-    </section>
   </middle>
 
   <back>
@@ -729,6 +750,16 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
         </front>
       </reference>
 
+	  <reference anchor="Canada" target="https://www.canada.ca/en/treasury-board-secretariat/services/information-technology/policy-implementation-notices/implementing-https-secure-web-connections-itpin.html">
+		<front>
+			<title>Implementing HTTPS for Secure Web Connections: Information Technology Policy Implementation Notice (ITPIN)</title>
+			<author>
+				<organization>Treasury Board of Canada Secretariat</organization>
+			</author>
+			<date year="2018" month="June" day="27"/>
+		</front>
+	  </reference>
+
       <reference anchor="Digicert">
         <front>
           <title>Deprecating TLS 1.0 and 1.1
@@ -762,7 +793,7 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
           https://aws.amazon.com/about-aws/whats-new/2017/02/elastic-load-balancing-support-for-tls-1-1-and-tls-1-2-pre-defined-security-policies/</title>
 
           <author>
-            <organization>CloudFlare</organization>
+            <organization>Amazon</organization>
           </author>
 
           <date year="2017"/>
@@ -787,6 +818,7 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
         </front>
       </reference>
 
+	  <!--
 	  <reference anchor="clusters">
 			  <front>
 					  <title>"Clusters of re-used keys"
@@ -795,6 +827,7 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
 					  <date year="2018" />
 	  			</front>
 	</reference>
+	-->
 
 
       <?rfc include='reference.RFC.5246'?>
