@@ -98,12 +98,11 @@
 
   <middle>
     <section title="Introduction">
-      <t>[[Text in double-square brackets, like this, is commentary intended
-      to be fixed as the draft evolves. You've already seen that we need to
+      <t>[[Text in double-square brackets is intended
+      to be fixed as the draft evolves. You've seen that we need to
       figure out the list of RFCs that this'd update in the abstract.
-	  There is a github repo for this at:</t>
-	  <t>https://github.com/sftcd/tls-oldversions-diediedie</t>
-	  <t>PRs (on the xml file) are welcome there.]]</t>
+	  There is a repo for this at: https://github.com/sftcd/tls-oldversions-diediedie
+	  PRs (on the xml file) are welcome there.]]</t>
 
       <t>Transport Layer Security (TLS) versions 1.0 <xref target="RFC2246"/>
       and 1.1 <xref target="RFC4346"/> were superceded by TLSv1.2 <xref
@@ -234,35 +233,92 @@
 
     <section title="Usage and Support">
 
-      <t>[[This section can be removed upon publication.]]</t>
+      <t>[[This section can be removed upon publication - or maybe keep it?]]</t>
 
 	  <section title="Web">
 
-      <t>Usage statistics for TLSv1.0 and TLSv1.1 vary slightly, but are in
+      <t>Usage statistics for TLSv1.0 and TLSv1.1 on the public web vary, but are in
       general very low already and soon to decline further with the impending
       PCI deadline to migrate off of TLSv1.0 by June 30, 2018. As of January
       2018, <xref target="StackExchange">Stackexchange</xref> quoted 4 percent
       of browsers using TLSv1.0.</t>
 
-    <t> The number of websites supporting TLS 1.2 is growing (+0.4%), and has
+    <t> The number of websites supporting TLS 1.2 is still growing (+0.4%), nd has
      reached 92% according to sslpulse as of June 19, 2018.
      <xref target="SSLpulse"> SSLpulse</xref>. Deprecating TLS 1.0 and
-     TLS 1.1 will not have a huge impact on TLS clients.
+	 TLS 1.1 will thus not have a major impact on browser or web server
+	 implementations.
      </t>
 
+	 <!--
       <t><xref target="Alexa">The Top 1 Million Analysis</xref> from
       February 2018 shows that for the sites surveyed, the vast majority
-      support TLSv1.2 (98.9 percent), with a mere 0.8 percent using TLSv1.0
-      and an even smaller percentage using TLSv1.1.</t>
+      support TLSv1.2 (97.9 percent), with a mere 2.0 percent using TLSv1.0
+      and an even smaller percentage using TLSv1.1.
+	-->
+	<t><xref target="web-stats"/> presents statistics for use of TLS versions in the web.</t>
+
+<!--
+	 A way to try present that I tried, but abandoned...
+<texttable anchor="table-os" style="all" title="TLS versions - public web ">
+    <ttcol align='left'>Ref</ttcol>
+    <ttcol align='right'>SSLv3</ttcol>
+    <ttcol align='right'>TLSv1.0</ttcol>
+    <ttcol align='right'>TLSv1.1</ttcol>
+    <ttcol align='right'>TLSv1.2</ttcol>
+    <ttcol align='right'>TLSv1.3</ttcol>
+    <ttcol align='center'>Date</ttcol>
+
+
+	<c><xref target="FF"/></c>
+	<c></c>
+	<c>1%</c>
+	<c></c>
+	<c>~94%</c>
+	<c>5%</c>
+	<c>20180724</c>
+
+	<c><xref target="SSLpulse"/></c>
+	<c></c>
+	<c></c>
+	<c></c>
+	<c>92%</c>
+	<c></c>
+	<c>20180724</c>
+
+	<c><xref target="Alexa"/></c>
+	<c></c>
+	<c>0.8%</c>
+	<c></c>
+	<c>98.9%</c>
+	<c></c>
+	<c>20180724</c>
+
+
+</texttable>
+-->
+
+<figure anchor="web-stats" title="Web Statistics" >
+<artwork><![CDATA[
+----------+----------+------+-------+-------+-------+-------+
+Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
+----------+----------+------+-------+-------+-------+-------+
+Firefox   | 20180709 |    - |   1.0 |     - |  94.0 |   5.0 |
+https://www.ietf.org/mail-archive/web/tls/current/msg26575.html
+----------+----------+------+-------+-------+-------+-------+
+Alexa     | 201802   |    - |   2.0 |  <0.1 |  97.9 |     - |
+https://scotthelme.co.uk/alexa-top-1-million-analysis-february-2018/
+----------+----------+------+-------+-------+-------+-------+
+OTHER     | 20180724 |    - |     - |     - |     - |     - |
+  ]]></artwork>
+</figure>
+
 
       <t>Support for TLSv1.0 has been removed or will be by July 2018 from the
       following standards, products, and services:</t>
 
       <t><list style="symbols">
           <t>3GPP 5G</t>
-
-          <t>[[Numerous web sites...]]</t>
-
           <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
           <t>CloudFare <xref target="CloudFlare"/></t>
 	  	  <t>Digicert <xref target="Digicert"/></t>
@@ -270,6 +326,7 @@
           <t>KeyCDN <xref target="KeyCDN"/></t>
           <t>PayPal <xref target="paypal"/></t>
 		  <t>Stripe <xref target="stripe"/></t>
+          <t>[[Numerous web sites...]]</t>
 
         </list></t>
 
@@ -280,18 +337,22 @@
 
       <t><list style="symbols">
           <t>3GPP 5G Release 16</t>
-          <t>[[Numerous web sites...]]</t>
           <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
           <t>CloudFare <xref target="CloudFlare"/></t>
           <t>GitHub <xref target="GIT"/></t>
           <t>PayPal <xref target="paypal"/></t>
 		  <t>Stripe <xref target="stripe"/></t>
+          <t>[[Numerous web sites...]]</t>
 
         </list></t>
 
 		</section>
 
 		<section title="Mail">
+
+				<t>E-Mail uses TLS for SMTP, submission (port 587), POP/POP3 and IMAP.
+						Typically email deployments lag public web deployments in
+						terms of the rate of adoption of new TLS versions.</t>
 
 				<t>In one 2018 ZMap-based study <xref target="clusters"/> of
 						~200,000 mail server IP addresses in 10 countries, use
@@ -300,6 +361,61 @@
 						10.6%. Use of TLSv1.1 was negligible - at 0.01%, for 
 					   TLSv1.1,	SSLv3 was twice as common.  TLSv1.2 was used for 89.3% of
 						services and no TLSv1.3 was seen.</t>
+
+<figure anchor="mail-stats" title="Mail Statistics" >
+<artwork><![CDATA[
+----------+----------+------+-------+-------+-------+-------+
+Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
+----------+----------+------+-------+-------+-------+-------+
+Clusters  | 20180316 | <0.1 |  10.6 |  <0.1 |  89.3 |     - |
+https://eprint.iacr.org/2018/299
+----------+----------+------+-------+-------+-------+-------+
+  ]]></artwork>
+</figure>
+
+	<t><xref target="mail-stats"/> presents statistics for use of TLS versions in the email applications.</t>
+
+		</section>
+
+		<section title="Operating Systems">
+
+			<t>This section reports statistics from operating systems involving
+					multiple applications.</t>
+
+<figure anchor="os-stats" title="Operating System Statistics" >
+<artwork><![CDATA[
+----------+----------+------+-------+-------+-------+-------+
+Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
+----------+----------+------+-------+-------+-------+-------+
+Windows:
+  Client  | 20180709 |    - | >10.0 |  ~0.3 |    -  |     - |
+  Server  | 20180709 |    - |  ~1.5 |  ~0.0 |    -  |     - |
+https://www.ietf.org/mail-archive/web/tls/current/msg26577.html
+----------+----------+------+-------+-------+-------+-------+
+  ]]></artwork>
+</figure>
+
+	<t><xref target="os-stats"/> presents statistics for use of TLS versions in the operating systems.</t>
+
+		</section>
+
+		<section title="Enterprise Networks">
+
+			<t>This section reports statistics for applications running within Enterprise networks.</t>
+
+<figure anchor="intra-stats" title="Enterprise Network Statistics" >
+<artwork><![CDATA[
+----------+----------+------+-------+-------+-------+-------+
+Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
+----------+----------+------+-------+-------+-------+-------+
+tcd.ie    | 20180713 | 18.0 |  35.0 |    0  |  45.0 |     0 |
+https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
+----------+----------+------+-------+-------+-------+-------+
+  ]]></artwork>
+</figure>
+
+	<t><xref target="intra-stats"/> presents statistics for use of TLS versions in the enterprise networks.
+			The tcd.ie numbers above were the result of a student project and need further validation.</t>
 
 		</section>
 
@@ -474,6 +590,7 @@
     <references title="Informative References">
       <?rfc include='reference.RFC.7457'?>
 
+	  <!--
       <reference anchor="Alexa">
         <front>
           <title>The Alexa Top 1 Million Analysis
@@ -486,6 +603,7 @@
           <date year="2018"/>
         </front>
       </reference>
+		-->
 
       <reference anchor="StackExchange">
         <front>
@@ -501,19 +619,41 @@
         </front>
       </reference>
 
+	  <!--
+      <reference anchor="Windows">
+        <front>
+          <title>Windows
+          <author>
+            <organization>Andrei Popov</organization>
+          </author>
+          <date year="2018"/>
+        </front>
+      </reference>
+
+      <reference anchor="FF">
+        <front>
+          <title>Firefox
+          https://www.ietf.org/mail-archive/web/tls/current/msg26575.html</title>
+          <author>
+            <organization>Eric Rescorla</organization>
+          </author>
+          <date year="2018"/>
+        </front>
+      </reference>
+		-->
+
       <reference anchor="SSLpulse">
         <front>
           <title>SSLpulse
           https://www.ssllabs.com/ssl-pulse/</title>
-
           <author>
             <organization>SSLpulse - will be deleted before
             publication</organization>
           </author>
-
           <date year="2018"/>
         </front>
       </reference>
+
       <reference anchor="NIST800-52r2">
         <front>
           <title>NIST SP800-52r2
