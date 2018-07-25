@@ -88,10 +88,10 @@ Table of Contents
    6.  Do Not Use TLSv1.0  . . . . . . . . . . . . . . . . . . . . .   8
    7.  Do Not Use TLSv1.1  . . . . . . . . . . . . . . . . . . . . .   9
    8.  Do Not Use SHA-1 in TLSv1.2 . . . . . . . . . . . . . . . . .   9
-   9.  Updates to RFC7525  . . . . . . . . . . . . . . . . . . . . .  10
+   9.  Updates to RFC7525  . . . . . . . . . . . . . . . . . . . . .   9
    10. Security Considerations . . . . . . . . . . . . . . . . . . .  10
    11. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  10
-   12. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  11
+   12. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
    13. References  . . . . . . . . . . . . . . . . . . . . . . . . .  11
      13.1.  Normative References . . . . . . . . . . . . . . . . . .  11
      13.2.  Informative References . . . . . . . . . . . . . . . . .  11
@@ -316,8 +316,8 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
    E-Mail uses TLS for SMTP, submission (port 587), POP/POP3 and IMAP.
    Typically email deployments lag public web deployments in terms of
-   the rate of adoption of new TLS versions.
-
+   the rate of adoption of new TLS versions.  Figure 2 presents
+   statistics for use of TLS versions in the email applications.
 
 
 
@@ -352,13 +352,10 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
                          Figure 2: Mail Statistics
 
-   Figure 2 presents statistics for use of TLS versions in the email
-   applications.
-
 4.3.  Operating Systems
 
-   This section reports statistics from operating systems involving
-   multiple applications.
+   Figure 3 presents statistics for use of TLS versions in operating
+   systems.
 
    +----------------+----------+------+-------+-------+-------+-------+
    | Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
@@ -372,27 +369,11 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
                    Figure 3: Operating System Statistics
 
-   Figure 3 presents statistics for use of TLS versions in the operating
-   systems.
-
 4.4.  Enterprise Networks
 
-   This section reports statistics for applications running within
-   Enterprise networks.
-
-
-
-
-
-
-
-
-
-
-Moriarty & Farrell      Expires January 26, 2019                [Page 7]
-
-Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
-
+   Figure 4 presents statistics for use of TLS versions in the
+   enterprise networks.  The tcd.ie numbers above were the result of a
+   student project and need further validation.
 
    +----------------+----------+------+-------+-------+-------+-------+
    | Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
@@ -403,9 +384,15 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
                   Figure 4: Enterprise Network Statistics
 
-   Figure 4 presents statistics for use of TLS versions in the
-   enterprise networks.  The tcd.ie numbers above were the result of a
-   student project and need further validation.
+
+
+
+
+
+Moriarty & Farrell      Expires January 26, 2019                [Page 7]
+
+Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
+
 
 5.  SHA-1
 
@@ -442,14 +429,6 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    version set to {03,01} MUST respond with a "protocol_version" alert
    message and close the connection.
 
-
-
-
-Moriarty & Farrell      Expires January 26, 2019                [Page 8]
-
-Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
-
-
    Historically, TLS specifications were not clear on what the record
    layer version number (TLSPlaintext.version) could contain when
    sending ClientHello.  Appendix E of [RFC5246] notes that
@@ -460,6 +439,16 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    ClientHello, but they MUST NOT negotiate TLSv1.0.
 
    [[Text here is derived (or stolen:-) from [RFC7568]]]
+
+
+
+
+
+
+Moriarty & Farrell      Expires January 26, 2019                [Page 8]
+
+Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
+
 
 7.  Do Not Use TLSv1.1
 
@@ -499,13 +488,6 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    include pairs that include SHA-1 hash.  In particular, values {2, 1},
    {2, 2} and {2, 3} MUST NOT be present in the extension.
 
-
-
-Moriarty & Farrell      Expires January 26, 2019                [Page 9]
-
-Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
-
-
    Note: this does not affect cipher suites that use SHA-1 HMAC for data
    integrity as the HMAC construction is still considered secure and
    when they are used in TLSv1.2 SHA-256 is used for handshake
@@ -515,6 +497,15 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
    [[Since RFC7525 is BCP195, there'll probably be some process-fun to
    do an update of that.  Formally, it may be that this document becomes
+
+
+
+
+Moriarty & Farrell      Expires January 26, 2019                [Page 9]
+
+Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
+
+
    a new part of BCP195 I guess, but we can figure that out with chairs
    and ADs.]]
 
@@ -555,16 +546,21 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    Kario, Loganaden Velvindron, Eric Mill, Yoav Nir, Andrei Popov, Eric
    Rescorla, and Yaron Sheffer.
 
+12.  IANA Considerations
+
+   [[This memo includes no request to IANA.]]
+
+
+
+
+
+
 
 
 Moriarty & Farrell      Expires January 26, 2019               [Page 10]
 
 Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
-
-12.  IANA Considerations
-
-   [[This memo includes no request to IANA.]]
 
 13.  References
 
@@ -607,17 +603,6 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
               https://www.mitls.org/downloads/
               transcript-collisions.pdf", 2016.
 
-
-
-
-
-
-
-Moriarty & Farrell      Expires January 26, 2019               [Page 11]
-
-Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
-
-
    [Canada]   Treasury Board of Canada Secretariat, "Implementing HTTPS
               for Secure Web Connections: Information Technology Policy
               Implementation Notice (ITPIN)", June 2018,
@@ -625,6 +610,13 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
               secretariat/services/information-technology/
               policy-implementation-notices/
               implementing-https-secure-web-connections-itpin.html>.
+
+
+
+Moriarty & Farrell      Expires January 26, 2019               [Page 11]
+
+Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
+
 
    [CloudFlare]
               CloudFlare, "CloudFlare Deprecated TLSv1.0 and TLSv1.1
@@ -665,15 +657,6 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    [paypal]   Paypal, ""TLS1.2 and HTTP/1.1 Upgrade" https://www.paypal-
               notice.com/en/TLS-1.2-and-HTTP1.1-Upgrade/", 2018.
 
-
-
-
-
-Moriarty & Farrell      Expires January 26, 2019               [Page 12]
-
-Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
-
-
    [PCI-TLS1]
               PCI Security Standards Council, "Migrating from SSL and
               Early TLS https://www.pcisecuritystandards.org/documents/
@@ -682,6 +665,14 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    [RFC4347]  Rescorla, E. and N. Modadugu, "Datagram Transport Layer
               Security", RFC 4347, DOI 10.17487/RFC4347, April 2006,
               <https://www.rfc-editor.org/info/rfc4347>.
+
+
+
+
+Moriarty & Farrell      Expires January 26, 2019               [Page 12]
+
+Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
+
 
    [RFC5246]  Dierks, T. and E. Rescorla, "The Transport Layer Security
               (TLS) Protocol Version 1.2", RFC 5246,
@@ -711,6 +702,15 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
    [stripe]   Stripe, ""Upgrading to SHA-2 and TLS 1.2"
               https://stripe.com/blog/upgrading-tls", 2018.
+
+
+
+
+
+
+
+
+
 
 
 

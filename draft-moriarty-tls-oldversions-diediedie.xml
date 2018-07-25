@@ -366,7 +366,8 @@
 
 				<t>E-Mail uses TLS for SMTP, submission (port 587), POP/POP3 and IMAP.
 						Typically email deployments lag public web deployments in
-						terms of the rate of adoption of new TLS versions.</t>
+						terms of the rate of adoption of new TLS versions.
+	<xref target="mail-stats"/> presents statistics for use of TLS versions in the email applications.</t>
 
 				<!--
 				<t>In one 2018 ZMap-based study <xref target="clusters"/> of
@@ -394,14 +395,12 @@
   ]]></artwork>
 </figure>
 
-	<t><xref target="mail-stats"/> presents statistics for use of TLS versions in the email applications.</t>
 
 		</section>
 
 		<section title="Operating Systems">
 
-			<t>This section reports statistics from operating systems involving
-					multiple applications.</t>
+	<t><xref target="os-stats"/> presents statistics for use of TLS versions in operating systems.</t>
 
 <figure anchor="os-stats" title="Operating System Statistics" >
 <artwork><![CDATA[
@@ -417,13 +416,13 @@
   ]]></artwork>
 </figure>
 
-	<t><xref target="os-stats"/> presents statistics for use of TLS versions in the operating systems.</t>
 
 		</section>
 
 		<section title="Enterprise Networks">
 
-			<t>This section reports statistics for applications running within Enterprise networks.</t>
+	<t><xref target="intra-stats"/> presents statistics for use of TLS versions in the enterprise networks.
+			The tcd.ie numbers above were the result of a student project and need further validation.</t>
 
 <figure anchor="intra-stats" title="Enterprise Network Statistics" >
 <artwork><![CDATA[
@@ -436,8 +435,6 @@
   ]]></artwork>
 </figure>
 
-	<t><xref target="intra-stats"/> presents statistics for use of TLS versions in the enterprise networks.
-			The tcd.ie numbers above were the result of a student project and need further validation.</t>
 
 		</section>
 
