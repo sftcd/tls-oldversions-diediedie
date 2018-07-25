@@ -19,7 +19,7 @@
 <?rfc rfcedstyle="yes"?>
 <?rfc comments="yes"?>
 <?rfc inline="yes"?>
-<rfc category="std" docName="draft-moriarty-tls-oldversions-diediedie-01"
+<rfc category="std" docName="draft-moriarty-tls-oldversions-diediedie-02"
      ipr="trust200902" updates="[[List TBD]]">
   <front>
     <title abbrev="Deprecating TLSv1.0 and TLSv1.1">Deprecating TLSv1.0 and
@@ -466,8 +466,8 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
       Negotiation of TLSv1.0 from any version of TLS MUST NOT be
       permitted.</t>
 
-      <t>Any version of TLS is more secure then TLSv1.0. TLSv1.0 can be configured
-      to prevent interception, though the highest version available is
+      <t>Any other version of TLS is more secure then TLSv1.0. TLSv1.0 can be configured
+      to prevent interception, though using the highest version available is
       preferable.</t>
 
       <t>Pragmatically, clients MUST NOT send a ClientHello with
@@ -501,7 +501,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
       connection.</t>
 
       <t>Any newer version of TLS is more secure then TLSv1.1. TLSv1.1 can be
-      configured to prevent interception, though the highest version available
+      configured to prevent interception, though using the highest version available
       is preferable. Support for TLSv1.1 is dwindling in libraries and will
       impact security going forward if mitagations for attacks cannot be
       easily addressed and supported in older libraries.</t>
@@ -547,7 +547,8 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
           (published in 1999) does not support many modern, strong cipher
           suites. In addition, TLS 1.0 lacks a per- record Initialization
           Vector (IV) for CBC-based cipher suites and does not warn against
-          common padding errors.</t>
+          common padding errors.
+		  <vspace blankLines="1"/></t>
 
           <t>Implementations MUST NOT negotiate TLS version 1.1 <xref
           target="RFC4346"/>. <vspace blankLines="1"/> Rationale: TLS 1.1

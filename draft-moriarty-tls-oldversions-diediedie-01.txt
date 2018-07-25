@@ -10,7 +10,7 @@ Expires: January 26, 2019                                  July 25, 2018
 
 
                     Deprecating TLSv1.0 and TLSv1.1
-              draft-moriarty-tls-oldversions-diediedie-02
+              draft-moriarty-tls-oldversions-diediedie-01
 
 Abstract
 
