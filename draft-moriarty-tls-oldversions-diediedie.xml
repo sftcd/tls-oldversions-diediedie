@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="US-ASCII"?>
 <!-- this is version 5 of this xml2rfc template -->
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
-<!ENTITY rfc2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
-<!ENTITY rfc2223 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2223.xml">
-<!ENTITY rfc2578 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2578.xml">
-<!ENTITY rfc2579 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2579.xml">
-<!ENTITY rfc2580 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2580.xml">
-<!ENTITY rfc2629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
-<!ENTITY rfc3410 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3410.xml">
-<!ENTITY rfc4181 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4181.xml">
-<!ENTITY rfc7457 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7457.xml">
+<!ENTITY rfc2119 SYSTEM "https://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
+<!ENTITY rfc2223 SYSTEM "https://xml.resource.org/public/rfc/bibxml/reference.RFC.2223.xml">
+<!ENTITY rfc2578 SYSTEM "https://xml.resource.org/public/rfc/bibxml/reference.RFC.2578.xml">
+<!ENTITY rfc2579 SYSTEM "https://xml.resource.org/public/rfc/bibxml/reference.RFC.2579.xml">
+<!ENTITY rfc2580 SYSTEM "https://xml.resource.org/public/rfc/bibxml/reference.RFC.2580.xml">
+<!ENTITY rfc2629 SYSTEM "https://xml.resource.org/public/rfc/bibxml/reference.RFC.2629.xml">
+<!ENTITY rfc3410 SYSTEM "https://xml.resource.org/public/rfc/bibxml/reference.RFC.3410.xml">
+<!ENTITY rfc4181 SYSTEM "https://xml.resource.org/public/rfc/bibxml/reference.RFC.4181.xml">
+<!ENTITY rfc7457 SYSTEM "https://xml.resource.org/public/rfc/bibxml/reference.RFC.7457.xml">
 ]>
 <?rfc toc="yes"?>
 <?rfc symrefs="yes"?>
 <?rfc compact="yes"?>
-<?rfc subcompact="no"?>
+<?rfc subcompact="yes"?>
 <?rfc strict="no"?>
 <?rfc rfcedstyle="yes"?>
 <?rfc comments="yes"?>
@@ -234,21 +234,58 @@
 
     </section>
 
-    <section title="Usage and Support">
+	<section title="Removing Support">
 
       <t>[[This section can be removed upon publication - or maybe keep it?]]</t>
+
+      <t>Support for TLSv1.0 has been removed or will be by July 2018 from the
+      following standards, products, and services:</t>
+
+      <t><list style="symbols">
+          <t>3GPP 5G</t>
+          <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
+          <t>CloudFare <xref target="CloudFlare"/></t>
+	  	  <t>Digicert <xref target="Digicert"/></t>
+          <t>GitHub <xref target="GIT"/></t>
+          <t>KeyCDN <xref target="KeyCDN"/></t>
+          <t>PayPal <xref target="paypal"/></t>
+		  <t>Stripe <xref target="stripe"/></t>
+          <t>[[Numerous web sites...]]</t>
+
+        </list></t>
+
+      <t>Many web sites have taken the action of including the deprecation of
+      TLSv1.1 into their plans for deprecating TLSv1.0 for the PCI council
+      deadline. Support for TLSv1.1 has been removed or will be by July 2018
+      from the following standards, products, and services:</t>
+
+      <t><list style="symbols">
+          <t>3GPP 5G Release 16</t>
+          <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
+          <t>CloudFare <xref target="CloudFlare"/></t>
+          <t>GitHub <xref target="GIT"/></t>
+          <t>PayPal <xref target="paypal"/></t>
+		  <t>Stripe <xref target="stripe"/></t>
+          <t>[[Numerous web sites...]]</t>
+
+        </list></t>
+	</section>
+
+    <section title="Usage">
+      <t>[[This section can be removed upon publication - or maybe keep it?]]</t>
+
 
 	  <section title="Web">
 
       <t>Usage statistics for TLSv1.0 and TLSv1.1 on the public web vary, but are in
       general very low already and soon to decline further with the impending
       PCI deadline to migrate off of TLSv1.0 by June 30, 2018. As of January
-      2018, <xref target="StackExchange">Stackexchange</xref> quoted 4 percent
+	  2018, <xref target="StackExchange"/> quoted 4 percent
       of browsers using TLSv1.0.</t>
 
     <t> The number of websites supporting TLS 1.2 is still growing (+0.4%), nd has
      reached 92% according to sslpulse as of June 19, 2018.
-     <xref target="SSLpulse"> SSLpulse</xref>. Deprecating TLS 1.0 and
+	 <xref target="SSLpulse"/> Deprecating TLS 1.0 and
 	 TLS 1.1 will thus not have a major impact on browser or web server
 	 implementations.
      </t>
@@ -303,55 +340,20 @@
 
 <figure anchor="web-stats" title="Web Statistics" >
 <artwork><![CDATA[
-----------+----------+------+-------+-------+-------+-------+
-Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
-----------+----------+------+-------+-------+-------+-------+
-Alexa     | 20180226 |    - |   2.0 |  <0.1 |  97.9 |     - |
-https://scotthelme.co.uk/alexa-top-1-million-analysis-february-2018/
-----------+----------+------+-------+-------+-------+-------+
-Cloudflare| 20180518 |  0.0 |   9.3 |   0.2 |  84.9 |   5.5 |
-https://blog.cloudflare.com/you-get-tls-1-3-you-get-tls-1-3-everyone-gets-tls-1-3/
-----------+----------+------+-------+-------+-------+-------+
-Firefox   | 20180709 |    - |   1.0 |     - |  94.0 |   5.0 |
-https://www.ietf.org/mail-archive/web/tls/current/msg26575.html
-----------+----------+------+-------+-------+-------+-------+
-Chrome    | 20180711 |    - |   0.4 |  <0.1 |    -  |     - |
-https://www.ietf.org/mail-archive/web/tls/current/msg26620.html
++----------------+----------+------+-------+-------+-------+-------+
+| Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
++----------------+----------+------+-------+-------+-------+-------+
+! Alexa [1]      | 20180226 |    - |   2.0 |  <0.1 |  97.9 |     - |
+| Cloudflare [2] | 20180518 |  0.0 |   9.3 |   0.2 |  84.9 |   5.5 |
+| Firefox [3]    | 20180709 |    - |   1.0 |     - |  94.0 |   5.0 |
+| Chrome [4]     | 20180711 |    - |   0.4 |  <0.1 |    -  |     - |
++----------------+----------+------+-------+-------+-------+-------+
+[1] https://scotthelme.co.uk/alexa-top-1-million-analysis-february-2018/
+[2] https://www.ietf.org/mail-archive/web/tls/current/msg26578.html
+[3] https://www.ietf.org/mail-archive/web/tls/current/msg26575.html
+[4] https://www.ietf.org/mail-archive/web/tls/current/msg26620.html
   ]]></artwork>
 </figure>
-
-
-      <t>Support for TLSv1.0 has been removed or will be by July 2018 from the
-      following standards, products, and services:</t>
-
-      <t><list style="symbols">
-          <t>3GPP 5G</t>
-          <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
-          <t>CloudFare <xref target="CloudFlare"/></t>
-	  	  <t>Digicert <xref target="Digicert"/></t>
-          <t>GitHub <xref target="GIT"/></t>
-          <t>KeyCDN <xref target="KeyCDN"/></t>
-          <t>PayPal <xref target="paypal"/></t>
-		  <t>Stripe <xref target="stripe"/></t>
-          <t>[[Numerous web sites...]]</t>
-
-        </list></t>
-
-      <t>Many web sites have taken the action of including the deprecation of
-      TLSv1.1 into their plans for deprecating TLSv1.0 for the PCI council
-      deadline. Support for TLSv1.1 has been removed or will be by July 2018
-      from the following standards, products, and services:</t>
-
-      <t><list style="symbols">
-          <t>3GPP 5G Release 16</t>
-          <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
-          <t>CloudFare <xref target="CloudFlare"/></t>
-          <t>GitHub <xref target="GIT"/></t>
-          <t>PayPal <xref target="paypal"/></t>
-		  <t>Stripe <xref target="stripe"/></t>
-          <t>[[Numerous web sites...]]</t>
-
-        </list></t>
 
 		</section>
 
@@ -373,17 +375,16 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26620.html
 
 <figure anchor="mail-stats" title="Mail Statistics" >
 <artwork><![CDATA[
-----------+----------+------+-------+-------+-------+-------+
-Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
-----------+----------+------+-------+-------+-------+-------+
-Clusters  | 20180316 | <0.1 |  10.6 |  <0.1 |  89.3 |     - |
-https://eprint.iacr.org/2018/299
-----------+----------+------+-------+-------+-------+-------+
-TLSA      | 20180710 |    - |   1.4 |   0.1 |  98.5 |     - |
-https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
-----------+----------+------+-------+-------+-------+-------+
-UK-ESP    | 20180710 |    - |  19.9 |  <0.1 |    -  |     - |
-https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
++----------------+----------+------+-------+-------+-------+-------+
+| Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
++----------------+----------+------+-------+-------+-------+-------+
+| Clusters [1]   | 20180316 | <0.1 |  10.6 |  <0.1 |  89.3 |     - |
+| TLSA [2]       | 20180710 |    - |   1.4 |   0.1 |  98.5 |     - |
+| UK-ESP [3]     | 20180710 |    - |  19.9 |  <0.1 |    -  |     - |
++----------------+----------+------+-------+-------+-------+-------+
+[1] https://eprint.iacr.org/2018/299
+[2] https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
+[3] https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
 
   ]]></artwork>
 </figure>
@@ -399,16 +400,15 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
 
 <figure anchor="os-stats" title="Operating System Statistics" >
 <artwork><![CDATA[
-----------+----------+------+-------+-------+-------+-------+
-Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
-----------+----------+------+-------+-------+-------+-------+
-Microsoft:
-  Client  | 20180709 |    - | >10.0 |  ~0.3 |    -  |     - |
-  Server  | 20180709 |    - |  ~1.5 |  ~0.0 |    -  |     - |
-https://www.ietf.org/mail-archive/web/tls/current/msg26577.html
-----------+----------+------+-------+-------+-------+-------+
-Apple     | 20180709 |    - |   0.4 |     - |  99.6 |     - |
-https://www.ietf.org/mail-archive/web/tls/current/msg26634.html
++----------------+----------+------+-------+-------+-------+-------+
+| Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
++----------------+----------+------+-------+-------+-------+-------+
+| Windows cli [1]| 20180709 |    - | >10.0 |  ~0.3 |    -  |     - |
+| Windows svr [1]| 20180709 |    - |  ~1.5 |  ~0.0 |    -  |     - |
+| Apple [2]      | 20180709 |    - |   0.4 |     - |  99.6 |     - |
++----------------+----------+------+-------+-------+-------+-------+
+[1] https://www.ietf.org/mail-archive/web/tls/current/msg26577.html
+[2] https://www.ietf.org/mail-archive/web/tls/current/msg26634.html
   ]]></artwork>
 </figure>
 
@@ -422,12 +422,12 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26634.html
 
 <figure anchor="intra-stats" title="Enterprise Network Statistics" >
 <artwork><![CDATA[
-----------+----------+------+-------+-------+-------+-------+
-Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
-----------+----------+------+-------+-------+-------+-------+
-tcd.ie    | 20180713 | 18.0 |  35.0 |    0  |  45.0 |     0 |
-https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
-----------+----------+------+-------+-------+-------+-------+
++----------------+----------+------+-------+-------+-------+-------+
+| Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
++----------------+----------+------+-------+-------+-------+-------+
+| tcd.ie [1]     | 20180713 | 18.0 |  35.0 |    0  |  45.0 |     0 |
++----------------+----------+------+-------+-------+-------+-------+
+[1] https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
   ]]></artwork>
 </figure>
 

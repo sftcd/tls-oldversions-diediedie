@@ -78,22 +78,23 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
      1.1.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   4
    2.  Support for Deprecation . . . . . . . . . . . . . . . . . . .   4
-   3.  Usage and Support . . . . . . . . . . . . . . . . . . . . . .   5
-     3.1.  Web . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
-     3.2.  Mail  . . . . . . . . . . . . . . . . . . . . . . . . . .   6
-     3.3.  Operating Systems . . . . . . . . . . . . . . . . . . . .   7
-     3.4.  Enterprise Networks . . . . . . . . . . . . . . . . . . .   7
-   4.  SHA-1 . . . . . . . . . . . . . . . . . . . . . . . . . . . .   8
-   5.  Do Not Use TLSv1.0  . . . . . . . . . . . . . . . . . . . . .   8
-   6.  Do Not Use TLSv1.1  . . . . . . . . . . . . . . . . . . . . .   9
-   7.  Do Not Use SHA-1 in TLSv1.2 . . . . . . . . . . . . . . . . .   9
-   8.  Updates to RFC7525  . . . . . . . . . . . . . . . . . . . . .  10
-   9.  Security Considerations . . . . . . . . . . . . . . . . . . .  10
-   10. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  10
-   11. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  11
-   12. References  . . . . . . . . . . . . . . . . . . . . . . . . .  11
-     12.1.  Normative References . . . . . . . . . . . . . . . . . .  11
-     12.2.  Informative References . . . . . . . . . . . . . . . . .  11
+   3.  Removing Support  . . . . . . . . . . . . . . . . . . . . . .   5
+   4.  Usage . . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
+     4.1.  Web . . . . . . . . . . . . . . . . . . . . . . . . . . .   6
+     4.2.  Mail  . . . . . . . . . . . . . . . . . . . . . . . . . .   6
+     4.3.  Operating Systems . . . . . . . . . . . . . . . . . . . .   7
+     4.4.  Enterprise Networks . . . . . . . . . . . . . . . . . . .   7
+   5.  SHA-1 . . . . . . . . . . . . . . . . . . . . . . . . . . . .   8
+   6.  Do Not Use TLSv1.0  . . . . . . . . . . . . . . . . . . . . .   8
+   7.  Do Not Use TLSv1.1  . . . . . . . . . . . . . . . . . . . . .   9
+   8.  Do Not Use SHA-1 in TLSv1.2 . . . . . . . . . . . . . . . . .   9
+   9.  Updates to RFC7525  . . . . . . . . . . . . . . . . . . . . .  10
+   10. Security Considerations . . . . . . . . . . . . . . . . . . .  10
+   11. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  10
+   12. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  11
+   13. References  . . . . . . . . . . . . . . . . . . . . . . . . .  11
+     13.1.  Normative References . . . . . . . . . . . . . . . . . .  11
+     13.2.  Informative References . . . . . . . . . . . . . . . . .  11
    Appendix A.  Change Log . . . . . . . . . . . . . . . . . . . . .  14
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  14
 
@@ -104,7 +105,6 @@ Table of Contents
    that this'd update in the abstract.  There is a repo for this at:
    https://github.com/sftcd/tls-oldversions-diediedie - PRs (on the xml
    file) are welcome there.]]
-
 
 
 
@@ -131,21 +131,16 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    o  They require implementation of older cipher suites that are no
       longer desirable for cryptographic reasons, e.g.  TLSv1.0 makes
       TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA mandatory to implement
-
    o  Lack of support for current recommended cipher suites, especially
       using AEAD ciphers which are not supported prior to TLS 1.2.
       Note: registry entries for no-longer-desirable ciphersuites remain
       in the registries, but many TLS registries are being updated
       through [I-D.ietf-tls-iana-registry-updates] which denotes such
       entries as "not recommended."
-
    o  Integrity of the handshake depends on SHA-1 hash
-
    o  Authentication of the peers depends on SHA-1 signatures
-
    o  Support for four protocol versions increases the likelihood of
       misconfiguration
-
    o  At least one widely-used library has plans to drop TLSv1.1 and
       TLSv1.0 support in upcoming releases; products using such
       libraries would need to use older versions of the libraries to
@@ -162,6 +157,11 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    hit the "publication requested" button as soon as there is WG
    consensus to deprecate these ancient versions of TLS.  The authors
    however think that deprecation now is timely.]]
+
+
+
+
+
 
 
 
@@ -210,14 +210,14 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
       errors exist.  Further implementation considerations for CBC modes
       (which were not included in RFC4346 [RFC4346]) are discussed in
       Section 3.3.2.
-
       TLS 1.2, specified in RFC5246 [RFC5246], made several
       cryptographic enhancements, particularly in the area of hash
       functions, with the ability to use or specify the SHA-2 family
       algorithms for hash, MAC, and Pseudorandom Function (PRF)
       computations.  TLS 1.2 also adds authenticated encryption with
       associated data (AEAD) cipher suites.
-
+      TLS 1.3, specified in TLSv1.3 [I-D.ietf-tls-tls13], represents a
+      significant change to TLS that aims to address threats that have
 
 
 
@@ -226,8 +226,6 @@ Moriarty & Farrell      Expires January 26, 2019                [Page 4]
 Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
 
-      TLS 1.3, specified in TLSv1.3 [I-D.ietf-tls-tls13], represents a
-      significant change to TLS that aims to address threats that have
       arisen over the years.  Among the changes are a new handshake
       protocol, a new key derivation process that uses the HMAC-based
       Extract-and-Expand Key Derivation Function (HKDF), and the removal
@@ -238,41 +236,43 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    The Canadian government treasury board have mandated that these old
    versions of TLS not be used.  [Canada]
 
-3.  Usage and Support
+3.  Removing Support
 
    [[This section can be removed upon publication - or maybe keep it?]]
 
-3.1.  Web
+   Support for TLSv1.0 has been removed or will be by July 2018 from the
+   following standards, products, and services:
 
-   Usage statistics for TLSv1.0 and TLSv1.1 on the public web vary, but
-   are in general very low already and soon to decline further with the
-   impending PCI deadline to migrate off of TLSv1.0 by June 30, 2018.
-   As of January 2018, Stackexchange [StackExchange] quoted 4 percent of
-   browsers using TLSv1.0.
+   o  3GPP 5G
+   o  Amazon Elastic Load Balancing [Amazon]
+   o  CloudFare [CloudFlare]
+   o  Digicert [Digicert]
+   o  GitHub [GIT]
+   o  KeyCDN [KeyCDN]
+   o  PayPal [paypal]
+   o  Stripe [stripe]
+   o  [[Numerous web sites...]]
 
-   The number of websites supporting TLS 1.2 is still growing (+0.4%),
-   nd has reached 92% according to sslpulse as of June 19, 2018.
-   SSLpulse [SSLpulse].  Deprecating TLS 1.0 and TLS 1.1 will thus not
-   have a major impact on browser or web server implementations.
+   Many web sites have taken the action of including the deprecation of
+   TLSv1.1 into their plans for deprecating TLSv1.0 for the PCI council
+   deadline.  Support for TLSv1.1 has been removed or will be by July
+   2018 from the following standards, products, and services:
 
-   Figure 1 presents statistics for use of TLS versions in the web.
+   o  3GPP 5G Release 16
+   o  Amazon Elastic Load Balancing [Amazon]
+   o  CloudFare [CloudFlare]
+   o  GitHub [GIT]
+   o  PayPal [paypal]
+   o  Stripe [stripe]
+   o  [[Numerous web sites...]]
 
-----------+----------+------+-------+-------+-------+-------+
-Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
-----------+----------+------+-------+-------+-------+-------+
-Alexa     | 20180226 |    - |   2.0 |  <0.1 |  97.9 |     - |
-https://scotthelme.co.uk/alexa-top-1-million-analysis-february-2018/
-----------+----------+------+-------+-------+-------+-------+
-Cloudflare| 20180518 |  0.0 |   9.3 |   0.2 |  84.9 |   5.5 |
-https://blog.cloudflare.com/you-get-tls-1-3-you-get-tls-1-3-everyone-gets-tls-1-3/
-----------+----------+------+-------+-------+-------+-------+
-Firefox   | 20180709 |    - |   1.0 |     - |  94.0 |   5.0 |
-https://www.ietf.org/mail-archive/web/tls/current/msg26575.html
-----------+----------+------+-------+-------+-------+-------+
-Chrome    | 20180711 |    - |   0.4 |  <0.1 |    -  |     - |
-https://www.ietf.org/mail-archive/web/tls/current/msg26620.html
+4.  Usage
 
-                         Figure 1: Web Statistics
+   [[This section can be removed upon publication - or maybe keep it?]]
+
+
+
+
 
 
 
@@ -282,51 +282,51 @@ Moriarty & Farrell      Expires January 26, 2019                [Page 5]
 Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
 
-   Support for TLSv1.0 has been removed or will be by July 2018 from the
-   following standards, products, and services:
+4.1.  Web
 
-   o  3GPP 5G
+   Usage statistics for TLSv1.0 and TLSv1.1 on the public web vary, but
+   are in general very low already and soon to decline further with the
+   impending PCI deadline to migrate off of TLSv1.0 by June 30, 2018.
+   As of January 2018, [StackExchange] quoted 4 percent of browsers
+   using TLSv1.0.
 
-   o  Amazon Elastic Load Balancing [Amazon]
+   The number of websites supporting TLS 1.2 is still growing (+0.4%),
+   nd has reached 92% according to sslpulse as of June 19, 2018.
+   [SSLpulse] Deprecating TLS 1.0 and TLS 1.1 will thus not have a major
+   impact on browser or web server implementations.
 
-   o  CloudFare [CloudFlare]
+   Figure 1 presents statistics for use of TLS versions in the web.
 
-   o  Digicert [Digicert]
++----------------+----------+------+-------+-------+-------+-------+
+| Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
++----------------+----------+------+-------+-------+-------+-------+
+! Alexa [1]      | 20180226 |    - |   2.0 |  <0.1 |  97.9 |     - |
+| Cloudflare [2] | 20180518 |  0.0 |   9.3 |   0.2 |  84.9 |   5.5 |
+| Firefox [3]    | 20180709 |    - |   1.0 |     - |  94.0 |   5.0 |
+| Chrome [4]     | 20180711 |    - |   0.4 |  <0.1 |    -  |     - |
++----------------+----------+------+-------+-------+-------+-------+
+[1] https://scotthelme.co.uk/alexa-top-1-million-analysis-february-2018/
+[2] https://www.ietf.org/mail-archive/web/tls/current/msg26578.html
+[3] https://www.ietf.org/mail-archive/web/tls/current/msg26575.html
+[4] https://www.ietf.org/mail-archive/web/tls/current/msg26620.html
 
-   o  GitHub [GIT]
+                         Figure 1: Web Statistics
 
-   o  KeyCDN [KeyCDN]
-
-   o  PayPal [paypal]
-
-   o  Stripe [stripe]
-
-   o  [[Numerous web sites...]]
-
-   Many web sites have taken the action of including the deprecation of
-   TLSv1.1 into their plans for deprecating TLSv1.0 for the PCI council
-   deadline.  Support for TLSv1.1 has been removed or will be by July
-   2018 from the following standards, products, and services:
-
-   o  3GPP 5G Release 16
-
-   o  Amazon Elastic Load Balancing [Amazon]
-
-   o  CloudFare [CloudFlare]
-
-   o  GitHub [GIT]
-
-   o  PayPal [paypal]
-
-   o  Stripe [stripe]
-
-   o  [[Numerous web sites...]]
-
-3.2.  Mail
+4.2.  Mail
 
    E-Mail uses TLS for SMTP, submission (port 587), POP/POP3 and IMAP.
    Typically email deployments lag public web deployments in terms of
    the rate of adoption of new TLS versions.
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -338,17 +338,16 @@ Moriarty & Farrell      Expires January 26, 2019                [Page 6]
 Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
 
-   ----------+----------+------+-------+-------+-------+-------+
-   Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
-   ----------+----------+------+-------+-------+-------+-------+
-   Clusters  | 20180316 | <0.1 |  10.6 |  <0.1 |  89.3 |     - |
-   https://eprint.iacr.org/2018/299
-   ----------+----------+------+-------+-------+-------+-------+
-   TLSA      | 20180710 |    - |   1.4 |   0.1 |  98.5 |     - |
-   https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
-   ----------+----------+------+-------+-------+-------+-------+
-   UK-ESP    | 20180710 |    - |  19.9 |  <0.1 |    -  |     - |
-   https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
+   +----------------+----------+------+-------+-------+-------+-------+
+   | Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
+   +----------------+----------+------+-------+-------+-------+-------+
+   | Clusters [1]   | 20180316 | <0.1 |  10.6 |  <0.1 |  89.3 |     - |
+   | TLSA [2]       | 20180710 |    - |   1.4 |   0.1 |  98.5 |     - |
+   | UK-ESP [3]     | 20180710 |    - |  19.9 |  <0.1 |    -  |     - |
+   +----------------+----------+------+-------+-------+-------+-------+
+   [1] https://eprint.iacr.org/2018/299
+   [2] https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
+   [3] https://www.ietf.org/mail-archive/web/tls/current/msg26603.html
 
 
                          Figure 2: Mail Statistics
@@ -356,31 +355,32 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    Figure 2 presents statistics for use of TLS versions in the email
    applications.
 
-3.3.  Operating Systems
+4.3.  Operating Systems
 
    This section reports statistics from operating systems involving
    multiple applications.
 
-   ----------+----------+------+-------+-------+-------+-------+
-   Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
-   ----------+----------+------+-------+-------+-------+-------+
-   Microsoft:
-     Client  | 20180709 |    - | >10.0 |  ~0.3 |    -  |     - |
-     Server  | 20180709 |    - |  ~1.5 |  ~0.0 |    -  |     - |
-   https://www.ietf.org/mail-archive/web/tls/current/msg26577.html
-   ----------+----------+------+-------+-------+-------+-------+
-   Apple     | 20180709 |    - |   0.4 |     - |  99.6 |     - |
-   https://www.ietf.org/mail-archive/web/tls/current/msg26634.html
+   +----------------+----------+------+-------+-------+-------+-------+
+   | Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
+   +----------------+----------+------+-------+-------+-------+-------+
+   | Windows cli [1]| 20180709 |    - | >10.0 |  ~0.3 |    -  |     - |
+   | Windows svr [1]| 20180709 |    - |  ~1.5 |  ~0.0 |    -  |     - |
+   | Apple [2]      | 20180709 |    - |   0.4 |     - |  99.6 |     - |
+   +----------------+----------+------+-------+-------+-------+-------+
+   [1] https://www.ietf.org/mail-archive/web/tls/current/msg26577.html
+   [2] https://www.ietf.org/mail-archive/web/tls/current/msg26634.html
 
                    Figure 3: Operating System Statistics
 
    Figure 3 presents statistics for use of TLS versions in the operating
    systems.
 
-3.4.  Enterprise Networks
+4.4.  Enterprise Networks
 
    This section reports statistics for applications running within
    Enterprise networks.
+
+
 
 
 
@@ -394,12 +394,12 @@ Moriarty & Farrell      Expires January 26, 2019                [Page 7]
 Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
 
-   ----------+----------+------+-------+-------+-------+-------+
-   Name/Ref  | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
-   ----------+----------+------+-------+-------+-------+-------+
-   tcd.ie    | 20180713 | 18.0 |  35.0 |    0  |  45.0 |     0 |
-   https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
-   ----------+----------+------+-------+-------+-------+-------+
+   +----------------+----------+------+-------+-------+-------+-------+
+   | Name/Ref       | Date     | SSLv3|TLSv1.0|TLSv1.1|TLSv1.2|TLSv1.3|
+   +----------------+----------+------+-------+-------+-------+-------+
+   | tcd.ie [1]     | 20180713 | 18.0 |  35.0 |    0  |  45.0 |     0 |
+   +----------------+----------+------+-------+-------+-------+-------+
+   [1] https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
 
                   Figure 4: Enterprise Network Statistics
 
@@ -407,7 +407,7 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    enterprise networks.  The tcd.ie numbers above were the result of a
    student project and need further validation.
 
-4.  SHA-1
+5.  SHA-1
 
    The integrity of both TLSv1.0 and TLSv1.1 depends on a running SHA-1
    hash of the exchanged messages.  This makes it possible to perform a
@@ -426,7 +426,7 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
    See [Bhargavan2016] for additional detail.
 
-5.  Do Not Use TLSv1.0
+6.  Do Not Use TLSv1.0
 
    TLSv1.0 MUST NOT be used.  Negotiation of TLSv1.0 from any version of
    TLS MUST NOT be permitted.
@@ -461,7 +461,7 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
    [[Text here is derived (or stolen:-) from [RFC7568]]]
 
-6.  Do Not Use TLSv1.1
+7.  Do Not Use TLSv1.1
 
    TLSv1.1 MUST NOT be used.  Negotiation of TLSv1.1 from any version of
    TLS MUST NOT be permitted.
@@ -488,7 +488,7 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    {03,XX} (including {03,00}) as the record layer version number for
    ClientHello, but they MUST NOT negotiate TLSv1.1.
 
-7.  Do Not Use SHA-1 in TLSv1.2
+8.  Do Not Use SHA-1 in TLSv1.2
 
    [[This section was suggested in PR#2 by Hubert Kario.  We're not
    clear if the WG would like this draft to include this or not, so will
@@ -511,7 +511,7 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    when they are used in TLSv1.2 SHA-256 is used for handshake
    integrity.
 
-8.  Updates to RFC7525
+9.  Updates to RFC7525
 
    [[Since RFC7525 is BCP195, there'll probably be some process-fun to
    do an update of that.  Formally, it may be that this document becomes
@@ -527,7 +527,6 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
       modern, strong cipher suites.  In addition, TLS 1.0 lacks a per-
       record Initialization Vector (IV) for CBC-based cipher suites and
       does not warn against common padding errors.
-
    o  Implementations MUST NOT negotiate TLS version 1.1 [RFC4346].
 
       Rationale: TLS 1.1 (published in 2006) is a security improvement
@@ -541,19 +540,20 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
       Version 1.0 of DTLS correlates to version 1.1 of TLS (see above).
 
-9.  Security Considerations
+10.  Security Considerations
 
    This document deprecates two older protocol versions for security
    reasons already described.  The attack surface is reduced when there
    are a smaller number of supported protocols and fallback options are
    removed.
 
-10.  Acknowledgements
+11.  Acknowledgements
 
    Thanks to those that provided usage data, reviewed and/or improved
    this document, including: David Benjamin, David Black, Viktor
    Dukhovni, Alessandro Ghedini, Jeremy Harris, Russ Housley, Hubert
-
+   Kario, Loganaden Velvindron, Eric Mill, Yoav Nir, Andrei Popov, Eric
+   Rescorla, and Yaron Sheffer.
 
 
 
@@ -562,16 +562,13 @@ Moriarty & Farrell      Expires January 26, 2019               [Page 10]
 Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
 
-   Kario, Loganaden Velvindron, Eric Mill, Yoav Nir, Andrei Popov, Eric
-   Rescorla, and Yaron Sheffer.
-
-11.  IANA Considerations
+12.  IANA Considerations
 
    [[This memo includes no request to IANA.]]
 
-12.  References
+13.  References
 
-12.1.  Normative References
+13.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -597,7 +594,7 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-12.2.  Informative References
+13.2.  Informative References
 
    [Amazon]   Amazon, "Amazon Elastic Load Balancing Support Deprecated
               TLSv1.0 and TLSv1.1 https://aws.amazon.com/about-aws/
@@ -609,6 +606,9 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
               Attacks: Breaking Authentication in TLS, IKE, and SSH
               https://www.mitls.org/downloads/
               transcript-collisions.pdf", 2016.
+
+
+
 
 
 
@@ -737,11 +737,8 @@ Appendix A.  Change Log
    From -00 to -01:
 
    o  Added stats sent to list so far
-
    o  PR's #2,3
-
    o  a few more references
-
    o  added section on email
 
 Authors' Addresses
@@ -762,6 +759,9 @@ Authors' Addresses
 
    Phone: +353-1-896-2354
    EMail: stephen.farrell@cs.tcd.ie
+
+
+
 
 
 
