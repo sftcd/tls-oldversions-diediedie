@@ -242,8 +242,8 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
    [[This section can be removed upon publication - or maybe keep it?]]
 
-   Support for TLSv1.0 has been removed by the July 2018 PCI deadline from the
-   following standards, products, and services:
+   Support for TLSv1.0 has been removed by the July 2018 PCI deadline
+   from the following standards, products, and services:
 
    o  3GPP 5G
    o  Amazon Elastic Load Balancing [Amazon]
@@ -257,8 +257,8 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
    Many web sites have taken the action of including the deprecation of
    TLSv1.1 into their plans for deprecating TLSv1.0 for the PCI council
-   deadline.  Support for TLSv1.1 has been removed by the July
-   2018 PCI deadline from the following standards, products, and services:
+   deadline.  Support for TLSv1.1 has been removed by the July 2018 PCI
+   deadline from the following standards, products, and services:
 
    o  3GPP 5G Release 16
    o  Amazon Elastic Load Balancing [Amazon]
@@ -285,10 +285,10 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 4.1.  Web
 
    Usage statistics for TLSv1.0 and TLSv1.1 on the public web vary, but
-   have been in general very low and declined further with the
-   impending PCI deadline to migrate off of TLSv1.0 by June 30, 2018.
-   As of January 2018, [StackExchange] quoted 4 percent of browsers
-   using TLSv1.0.
+   have been in general very low and declined further with the impending
+   PCI deadline to migrate off of TLSv1.0 by June 30, 2018.  As of
+   January 2018, [StackExchange] quoted 4 percent of browsers using
+   TLSv1.0.
 
    The number of websites supporting TLS 1.2 is still growing (+0.4%),
    and has reached 92% according to sslpulse as of June 19, 2018.
@@ -418,9 +418,9 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
    TLSv1.0 MUST NOT be used.  Negotiation of TLSv1.0 from any version of
    TLS MUST NOT be permitted.
 
-   Any version of TLS is more secure then TLSv1.0.  TLSv1.0 can be configured
-   to prevent interception, though the highest version available is
-   preferable.
+   Any version of TLS is more secure then TLSv1.0.  TLSv1.0 can be
+   configured to prevent interception, though the highest version
+   available is preferable.
 
    Pragmatically, clients MUST NOT send a ClientHello with
    ClientHello.client_version set to {03,01}. Similarly, servers MUST
