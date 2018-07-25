@@ -571,7 +571,7 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
     </section>
 
     <section title="Acknowledgements">
-      <t>Thank you to those that provided usage data, reviewed and improved this document, including:
+			<t>Thanks to those that provided usage data, reviewed and/or improved this document, including:
 			  David Benjamin,
 			  David Black,
 			  Viktor Dukhovni,
@@ -845,6 +845,7 @@ https://www.ietf.org/mail-archive/web/tls/current/msg26633.html
 	<t>[[RFC editor: please remove this before publication.]]</t>
 	<t>From -00 to -01:
       <list style="symbols">
+			  		<t>Added stats sent to list so far</t>
 					<t>PR's #2,3</t>
 					<t>a few more references</t>
 					<t>added section on email</t>

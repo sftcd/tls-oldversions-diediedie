@@ -550,7 +550,7 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
 10.  Acknowledgements
 
-   Thank you to those that provided usage data, reviewed and improved
+   Thanks to those that provided usage data, reviewed and/or improved
    this document, including: David Benjamin, David Black, Viktor
    Dukhovni, Alessandro Ghedini, Jeremy Harris, Russ Housley, Hubert
 
@@ -736,6 +736,8 @@ Appendix A.  Change Log
 
    From -00 to -01:
 
+   o  Added stats sent to list so far
+
    o  PR's #2,3
 
    o  a few more references
@@ -760,8 +762,6 @@ Authors' Addresses
 
    Phone: +353-1-896-2354
    EMail: stephen.farrell@cs.tcd.ie
-
-
 
 
 
