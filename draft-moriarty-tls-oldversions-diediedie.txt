@@ -210,14 +210,14 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
       errors exist.  Further implementation considerations for CBC modes
       (which were not included in RFC4346 [RFC4346]) are discussed in
       Section 3.3.2.
+
       TLS 1.2, specified in RFC5246 [RFC5246], made several
       cryptographic enhancements, particularly in the area of hash
       functions, with the ability to use or specify the SHA-2 family
       algorithms for hash, MAC, and Pseudorandom Function (PRF)
       computations.  TLS 1.2 also adds authenticated encryption with
       associated data (AEAD) cipher suites.
-      TLS 1.3, specified in TLSv1.3 [I-D.ietf-tls-tls13], represents a
-      significant change to TLS that aims to address threats that have
+
 
 
 
@@ -226,6 +226,8 @@ Moriarty & Farrell      Expires January 26, 2019                [Page 4]
 Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 
 
+      TLS 1.3, specified in TLSv1.3 [I-D.ietf-tls-tls13], represents a
+      significant change to TLS that aims to address threats that have
       arisen over the years.  Among the changes are a new handshake
       protocol, a new key derivation process that uses the HMAC-based
       Extract-and-Expand Key Derivation Function (HKDF), and the removal
@@ -269,8 +271,6 @@ Internet-Draft       Deprecating TLSv1.0 and TLSv1.1           July 2018
 4.  Usage
 
    [[This section can be removed upon publication - or maybe keep it?]]
-
-
 
 
 

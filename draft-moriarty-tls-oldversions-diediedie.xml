@@ -124,6 +124,7 @@
           <t>They require implementation of older cipher suites that are no
           longer desirable for cryptographic reasons, e.g. TLSv1.0 makes
           TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA mandatory to implement</t>
+  		  
 
           <t>Lack of support for current recommended cipher suites, especially
           using AEAD ciphers which are not supported prior to TLS 1.2.
@@ -209,6 +210,9 @@
         regardless of whether padding errors exist. Further implementation
         considerations for CBC modes (which were not included in <xref
         target="RFC4346">RFC4346</xref>) are discussed in Section 3.3.2.</t>
+  <!--subcompact="yes" above isn't nice here - add lines -->
+
+  		<t></t>
 
         <t>TLS 1.2, specified in <xref target="RFC5246">RFC5246</xref>, made
         several cryptographic enhancements, particularly in the area of hash
@@ -217,6 +221,7 @@
         computations. TLS 1.2 also adds authenticated encryption with
         associated data (AEAD) cipher suites.</t>
 
+  		<t></t>
         <t>TLS 1.3, specified in <xref
         target="I-D.ietf-tls-tls13">TLSv1.3</xref>, represents a significant
         change to TLS that aims to address threats that have arisen over the
