@@ -130,7 +130,7 @@
           using AEAD ciphers which are not supported prior to TLS 1.2.
 		  Note: registry entries for no-longer-desirable ciphersuites remain in the 
 		  registries, but many TLS registries are being updated
-		  through <xref target="I-D.ietf-tls-iana-registry-updates"/> which
+		  through <xref target="RFC8447"/> which
   		  denotes such entries as "not recommended."</t>
 
           <t>Integrity of the handshake depends on SHA-1 hash</t>
@@ -841,11 +841,19 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
 
       <?rfc include='reference.RFC.8446'?>
 
-      <?rfc include='reference.I-D.ietf-tls-iana-registry-updates'?>
+	  <?rfc include='reference.RFC.8447'?>
     </references>
 
     <section title="Change Log ">
 	<t>[[RFC editor: please remove this before publication.]]</t>
+	<t>From -01 to -02:
+      <list style="symbols">
+			  <t>Note -02 may never be published, the TLS WG are considering 
+					  adopting this (see https://mailarchive.ietf.org/arch/msg/tls/wkb4Fq1KX9-d9ZUHlDEvPxX8OGg) - 
+					  if they do, then we'll likely shoot out a -00 WG draft. </t>
+			  <t>I-Ds became RFCs 8446/8447 (PR#4, for TLS1.3)</t>
+	  </list>
+	</t>
 	<t>From -00 to -01:
       <list style="symbols">
 			  		<t>Added stats sent to list so far</t>
