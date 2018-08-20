@@ -107,7 +107,7 @@
       <t>Transport Layer Security (TLS) versions 1.0 <xref target="RFC2246"/>
       and 1.1 <xref target="RFC4346"/> were superceded by TLSv1.2 <xref
       target="RFC5246"/> in 2008, which has now itself been superceded by
-      TLSv1.3 <xref target="I-D.ietf-tls-tls13"/>. It is therefore timely to
+      TLSv1.3 <xref target="RFC8446"/>. It is therefore timely to
       further deprecate these old versions. The expection is that TLSv1.2 will
       continue to be used for many years alongside TLSv1.3.</t>
 
@@ -223,7 +223,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
 
   		<t></t>
         <t>TLS 1.3, specified in <xref
-        target="I-D.ietf-tls-tls13">TLSv1.3</xref>, represents a significant
+        target="RFC8446">TLSv1.3</xref>, represents a significant
         change to TLS that aims to address threats that have arisen over the
         years. Among the changes are a new handshake protocol, a new key
         derivation process that uses the HMAC-based Extract-and-Expand Key
@@ -839,7 +839,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
 
       <?rfc include='reference.RFC.4347'?>
 
-      <?rfc include='reference.I-D.ietf-tls-tls13'?>
+      <?rfc include='reference.RFC.8446'?>
 
       <?rfc include='reference.I-D.ietf-tls-iana-registry-updates'?>
     </references>
