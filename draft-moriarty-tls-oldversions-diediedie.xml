@@ -82,7 +82,7 @@
       Security (TLS) versions 1.0 <xref target="RFC2246"/> and 1.1 <xref
       target="RFC4346"/> and moves these documents to the historic state.
       These versions lack support for current and recommended cipher suites,
-      and various government and industry profiiles of applications using TLS
+      and various government and industry profiles of applications using TLS
       now mandate avoiding these old TLS versions. TLSv1.2 has been the
       recommended version for IETF protocols since 2008, providing sufficient
       time to transition away from older versions. Products having to support
@@ -108,7 +108,7 @@
       and 1.1 <xref target="RFC4346"/> were superceded by TLSv1.2 <xref
       target="RFC5246"/> in 2008, which has now itself been superceded by
       TLSv1.3 <xref target="RFC8446"/>. It is therefore timely to
-      further deprecate these old versions. The expection is that TLSv1.2 will
+      further deprecate these old versions. The expectation is that TLSv1.2 will
       continue to be used for many years alongside TLSv1.3.</t>
 
       <t>TLSv1.1 and TLSv1.0 are also actively being deprecated in accordance
@@ -193,7 +193,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
 
       <t>NIST for example have provided the following rationale,
 			  copied with permission from <xref target="NIST800-52r2">NIST SP800-52r2</xref>, 
-			  section 1.2 "History of TLS" (with references changed for RFC formating).
+			  section 1.2 "History of TLS" (with references changed for RFC formatting).
 
 	<list>
         <t>TLS 1.1, specified in <xref target="RFC4346"/>, was developed to
@@ -249,7 +249,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
       <t><list style="symbols">
           <t>3GPP 5G</t>
           <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
-          <t>CloudFare <xref target="CloudFlare"/></t>
+          <t>CloudFlare <xref target="CloudFlare"/></t>
 	  	  <t>Digicert <xref target="Digicert"/></t>
           <t>GitHub <xref target="GIT"/></t>
           <t>KeyCDN <xref target="KeyCDN"/></t>
@@ -267,7 +267,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
       <t><list style="symbols">
           <t>3GPP 5G Release 16</t>
           <t>Amazon Elastic Load Balancing <xref target="Amazon"/></t>
-          <t>CloudFare <xref target="CloudFlare"/></t>
+          <t>CloudFlare <xref target="CloudFlare"/></t>
           <t>GitHub <xref target="GIT"/></t>
           <t>PayPal <xref target="paypal"/></t>
 		  <t>Stripe <xref target="stripe"/></t>
@@ -450,7 +450,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
         <t>Similarly, the authentication of the handshake depends on
             signatures made using SHA-1 hash or a not stronger concatenation
             of MD-5 and SHA-1 hashes, allowing the attacker to
-            impersonate a server when it is able to break the severly weakened
+            impersonate a server when it is able to break the severely weakened
             SHA-1 hash.</t>
 
         <t>Neither TLSv1.0 nor TLSv1.1 allow the peers to select a stronger
@@ -503,7 +503,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
       <t>Any newer version of TLS is more secure then TLSv1.1. TLSv1.1 can be
       configured to prevent interception, though using the highest version available
       is preferable. Support for TLSv1.1 is dwindling in libraries and will
-      impact security going forward if mitagations for attacks cannot be
+      impact security going forward if mitigations for attacks cannot be
       easily addressed and supported in older libraries.</t>
 
       <t>Historically, TLS specifications were not clear on what the record
@@ -804,7 +804,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
       </reference>
 
 	  <!-- 2nd author name below - need to figure HOWTO get fullname correct with non-ASCII
-		   character - the "e" in "Gaetan" should be an with two dots above, as in PR#2 -->
+		   character - the "e" in "Gaetan" should be an "e" with two dots above, as in PR#2 -->
       <reference anchor="Bhargavan2016">
         <front>
             <title>Transcript Collision Attacks: Breaking Authentication in
