@@ -587,8 +587,9 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
 			  Yoav Nir, 
 			  Andrei Popov,
 			  Eric Rescorla,
+			  Yaron Sheffer,
 			  and
-			  Yaron Sheffer.
+			  Jakub Wilk.
 	  </t>
     </section>
 
@@ -852,6 +853,7 @@ Council to deprecate TLSv1.0 and TLSv1.1 by June 30, 2018.  TLSv1.2
 					  adopting this (see https://mailarchive.ietf.org/arch/msg/tls/wkb4Fq1KX9-d9ZUHlDEvPxX8OGg) - 
 					  if they do, then we'll likely shoot out a -00 WG draft. </t>
 			  <t>I-Ds became RFCs 8446/8447 (PR#4, for TLS1.3)</t>
+			  <t>Accepted PR#5 fixing typos</t>
 	  </list>
 	</t>
 	<t>From -00 to -01:
