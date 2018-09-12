@@ -3,6 +3,13 @@
 A diediedie draft for tlsv1.0 and tlsv1.1 initiated by Kathleen Moriarty,
 assisted by sftcd.
 
+Note that this draft has now been adopted by the IETF WG, under the name
+draft-ietf-tls-oldversions-deprecate (first I-D is yet to be posted) and so the
+repo for the new version is
+[https://github.com/tlswg/oldversions-deprecate](https://github.com/tlswg/oldversions-deprecate).
+If you're interested in this topic, then head over there to submit any
+new PRs or comments please.
+
 # IETF Note Well
 
 This repository relates to activities in the Internet Engineering Task
