@@ -10,6 +10,9 @@ repo for the new version is
 If you're interested in this topic, then head over there to submit any
 new PRs or comments please.
 
+Please submit any PRs on the XML file - we're still using xml2rfc
+for this with the XML file as the source.
+
 # IETF Note Well
 
 This repository relates to activities in the Internet Engineering Task
